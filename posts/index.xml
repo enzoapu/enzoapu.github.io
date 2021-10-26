@@ -1,28 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - Enzoo&#39;s Blog</title>
-        <link>http://example.org/posts/</link>
-        <description>All Posts | Enzoo&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 09 Oct 2021 18:18:33 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Third Post</title>
-    <link>http://example.org/posts/third-post/</link>
-    <pubDate>Sat, 09 Oct 2021 18:18:33 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://example.org/posts/third-post/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Second Post</title>
-    <link>http://example.org/posts/second-post/</link>
-    <pubDate>Sat, 09 Oct 2021 18:18:24 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://example.org/posts/second-post/</guid>
-    <description><![CDATA[Hello, Hugo!  123 456 789  ]]></description>
-</item><item>
+        <title>All Posts - Enzoo</title>
+        <link>https://enzochang.com/posts/</link>
+        <description>All Posts | Enzoo</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 26 Oct 2021 21:59:15 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/posts/" rel="self" type="application/rss+xml" /><item>
     <title>First Post</title>
-    <link>http://example.org/posts/first-post/</link>
-    <pubDate>Sat, 09 Oct 2021 17:16:17 &#43;0800</pubDate>
+    <link>https://enzochang.com/first-post/</link>
+    <pubDate>Tue, 26 Oct 2021 21:59:15 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://example.org/posts/first-post/</guid>
+    <guid>https://enzochang.com/first-post/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
