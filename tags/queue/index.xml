@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>queue - Tag - 恩佐思維</title>
+        <link>https://enzochang.com/tags/queue/</link>
+        <description>queue - Tag - 恩佐思維</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/queue/" rel="self" type="application/rss+xml" /><item>
+    <title>訊息佇列 Message Queue(MQ) 介紹</title>
+    <link>https://enzochang.com/message-queue/</link>
+    <pubDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://enzochang.com/message-queue/</guid>
+    <description><![CDATA[訊息佇列 Message Queue(MQ) 介紹 前言 這陣子在開發一個 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層，這篇文章將分享我在架設 RabbitMQ 與使用 Python 實作上的學習。
+什麼是 Message Queue(MQ)？ Message Queue - singleMessage Queue - single
+" Message Queue - single 
+Message Queue(MQ)是一種訊息傳遞仲介，架構中擁有三個角色，分別為 Producer、Broker 及 Consumer，提供不同程序(process)或不同系統(system)的非同步(asynchronous)溝通。
+什麼是非同步呢？  一般常見的 HTTP API 就屬於同步式方法，發送方(sender)發出請求(request)等待接收方(receiver)處理完回應(response)，等待過程連結不能斷開去做其他事。   由於先進先出(FIFO)的特性，發送方(producer)只要把訊息/任務往 MQ(broker) 裡面丟，接收方(consumer)就能夠依序從 MQ(broker)中取出訊息/任務，使雙方能夠獨立運作。
+使用 Message Queue 有什麼好處？ 任務緩衝 短時間內收到大量請求可能會導致系統過載，特別是 CPU / GPU 運算吃重(heavy computing)的情況，這時候 MQ 就發揮了緩衝的功能，Producer 不需等待地發送任務；Consumer 依自己的資源或算力取出適量的任務，處理完再繼續拿。
+暫存容錯 若 Consumer 意外關閉，未處理完的訊息/任務還會存在 MQ 內，並不會丟失，只要再把 Consumer 重啟，又可以接續處理。]]></description>
+</item></channel>
+</rss>

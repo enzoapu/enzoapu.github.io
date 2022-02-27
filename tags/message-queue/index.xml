@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>message-queue - Tag - 恩佐思維</title>
+        <link>https://enzochang.com/tags/message-queue/</link>
+        <description>message-queue - Tag - 恩佐思維</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 27 Feb 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/message-queue/" rel="self" type="application/rss+xml" /><item>
+    <title>RabbitMQ 介紹</title>
+    <link>https://enzochang.com/rabbitmq/</link>
+    <pubDate>Sun, 27 Feb 2022 22:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://enzochang.com/rabbitmq/</guid>
+    <description><![CDATA[RabbitMQ 介紹 前言 RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1) 有以下優勢：
+ RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。 RabbitMQ 為大多數流行的程式語言提供了多樣的開發套件包。(Python, Java, Ruby, PHP, C#, JS, Go, etc.) RabbitMQ 提供了一個 Web 使用者介面來管理權限並監控各種狀態、指標。  RabbitMQ 架構 圖片
+看完上一篇我們已經知道 Message Queue 架構中的三個角色，在 RabbitMQ 中也延用相同概念：
+ Producer 是發送訊息的應用程式 Queue 是儲存訊息的緩衝區 Consumer 是接收訊息的應用程式  不過在 RabbitMQ 中，根據不同模式會在 Producer 與 Queue 之間加上一層 Exchange。
+ Exchange 的工作非很簡單，透過綁定(binding)與 Queue 連結，負責接收來自 Producer 的訊息，然後將訊息推送給 Queue。 透過定義 Exchange 的類型(type)來判斷要如何處理收到的訊息，是要推送給哪個特定 Queue？還是要推送給多個 Queue？或是應該被丟棄？ Exchange 的類型(type)有分為 direct, topic, fanout &amp; headers，文章下個段落介紹不同模式時會探討差別。  常見的設計模式 根據 RabbitMQ Tutorials 的範例，展示了六種常見的模式，以下簡單做介紹（Python 範例程式碼附在標題後方連結）]]></description>
+</item><item>
+    <title>訊息佇列 Message Queue(MQ) 介紹</title>
+    <link>https://enzochang.com/message-queue/</link>
+    <pubDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://enzochang.com/message-queue/</guid>
+    <description><![CDATA[訊息佇列 Message Queue(MQ) 介紹 前言 這陣子在開發一個 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層，這篇文章將分享我在架設 RabbitMQ 與使用 Python 實作上的學習。
+什麼是 Message Queue(MQ)？ Message Queue - singleMessage Queue - single
+" Message Queue - single 
+Message Queue(MQ)是一種訊息傳遞仲介，架構中擁有三個角色，分別為 Producer、Broker 及 Consumer，提供不同程序(process)或不同系統(system)的非同步(asynchronous)溝通。
+什麼是非同步呢？  一般常見的 HTTP API 就屬於同步式方法，發送方(sender)發出請求(request)等待接收方(receiver)處理完回應(response)，等待過程連結不能斷開去做其他事。   由於先進先出(FIFO)的特性，發送方(producer)只要把訊息/任務往 MQ(broker) 裡面丟，接收方(consumer)就能夠依序從 MQ(broker)中取出訊息/任務，使雙方能夠獨立運作。
+使用 Message Queue 有什麼好處？ 任務緩衝 短時間內收到大量請求可能會導致系統過載，特別是 CPU / GPU 運算吃重(heavy computing)的情況，這時候 MQ 就發揮了緩衝的功能，Producer 不需等待地發送任務；Consumer 依自己的資源或算力取出適量的任務，處理完再繼續拿。
+暫存容錯 若 Consumer 意外關閉，未處理完的訊息/任務還會存在 MQ 內，並不會丟失，只要再把 Consumer 重啟，又可以接續處理。]]></description>
+</item></channel>
+</rss>
