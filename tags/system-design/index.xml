@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>queue - Tag - 恩佐思維</title>
-        <link>https://enzochang.com/tags/queue/</link>
-        <description>queue - Tag - 恩佐思維</description>
+        <title>system design - Tag - 恩佐思維</title>
+        <link>https://enzochang.com/tags/system-design/</link>
+        <description>system design - Tag - 恩佐思維</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/queue/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/system-design/" rel="self" type="application/rss+xml" /><item>
     <title>[DATA] 訊息佇列 01 - Message Queue(MQ) 介紹</title>
     <link>https://enzochang.com/message-queue/</link>
     <pubDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</pubDate>

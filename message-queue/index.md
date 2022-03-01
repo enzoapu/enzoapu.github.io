@@ -1,12 +1,13 @@
-# 訊息佇列 Message Queue(MQ) 介紹
+# [DATA] 訊息佇列 01 - Message Queue(MQ) 介紹
 
+<!--more-->
 
-
-# 訊息佇列 Message Queue(MQ) 介紹
+<!-- # 訊息佇列 Message Queue(MQ) 介紹 -->
 
 ## 前言
 
 這陣子在開發一個 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層，這篇文章將分享我在架設 RabbitMQ 與使用 Python 實作上的學習。
+
 
 ## 什麼是 Message Queue(MQ)？
 

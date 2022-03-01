@@ -1,8 +1,8 @@
-# CI/CD 介紹 - 基礎概念與導入準備
+# [DevOps] CI/CD 介紹 - 基礎概念與導入準備
 
+<!--more-->
 
-
-# CI/CD Introduction - 概念與導入前準備
+<!-- # CI/CD Introduction - 概念與導入前準備 -->
 
 ## 前言
 

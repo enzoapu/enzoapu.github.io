@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面 - 恩佐思維</title><meta name="Description" content="Data &amp; Agile"><meta property="og:title" content="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://enzochang.com/rabbitmq-intro/" /><meta property="og:image" content="https://enzochang.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-28T22:00:00+08:00" />
+<meta property="article:modified_time" content="2022-02-28T22:00:00+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://enzochang.com/logo.png"/>
+
+<meta name="twitter:title" content="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Enzo Thinking">
+<meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://enzochang.com/rabbitmq-intro/" /><link rel="prev" href="https://enzochang.com/message-queue/" /><link rel="next" href="https://enzochang.com/rabbitmq-python/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/enzochang.com\/rabbitmq-intro\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/enzochang.com\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "rabbitmq, message-queue","wordcount":  481 ,
+        "url": "https:\/\/enzochang.com\/rabbitmq-intro\/","datePublished": "2022-02-28T22:00:00+08:00","dateModified": "2022-02-28T22:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/enzochang.com\/images\/avatar.png",
+                    "width":  883 ,
+                    "height":  883 
+                }},"author": {
+                "@type": "Person",
+                "name": "Enzo Chang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="恩佐思維"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/agile.png"
+        data-srcset="/images/agile.png, /images/agile.png 1.5x, /images/agile.png 2x"
+        data-sizes="auto"
+        alt="/images/agile.png"
+        title="/images/agile.png" />恩佐思維</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="恩佐思維"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/agile.png"
+        data-srcset="/images/agile.png, /images/agile.png 1.5x, /images/agile.png 2x"
+        data-sizes="auto"
+        alt="/images/agile.png"
+        title="/images/agile.png" />恩佐思維</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-28">2022-02-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;481 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#rabbitmq-架構">RabbitMQ 架構</a></li>
+    <li><a href="#常見的設計模式">常見的設計模式</a>
+      <ul>
+        <li><a href="#1-simple-模式">1. Simple 模式</a></li>
+        <li><a href="#2-worker-模式">2. Worker 模式</a></li>
+        <li><a href="#3-publishsubscribe-模式">3. Publish/Subscribe 模式</a></li>
+        <li><a href="#4-routing-模式">4. Routing 模式</a></li>
+        <li><a href="#5-topics-模式">5. Topics 模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#下載安裝-rabbitmq">下載＆安裝 RabbitMQ</a>
+      <ul>
+        <li><a href="#docker-指令">Docker 指令</a></li>
+        <li><a href="#docker-compose-指令">Docker Compose 指令</a></li>
+      </ul>
+    </li>
+    <li><a href="#web-管理介面">Web 管理介面</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><!-- # RabbitMQ 介紹 -->
+<h2 id="前言">前言</h2>
+<p>RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)
+有以下優勢：</p>
+<ul>
+<li>RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。</li>
+<li>RabbitMQ 為大多數流行的程式語言提供了多樣的<a href="https://www.rabbitmq.com/devtools.html" target="_blank" rel="noopener noreffer">開發套件包</a>。(Python, Java, Ruby, PHP, C#, JS, Go, etc.)</li>
+<li>RabbitMQ 提供了一個 Web 使用者介面來管理權限並監控各種狀態、指標。</li>
+</ul>
+<h2 id="rabbitmq-架構">RabbitMQ 架構</h2>
+<p>圖片</p>
+<p>看完上一篇我們已經知道 Message Queue 架構中的三個角色，在 RabbitMQ 中也延用相同概念：</p>
+<ul>
+<li>Producer 是發送訊息的應用程式</li>
+<li>Queue 是儲存訊息的緩衝區</li>
+<li>Consumer 是接收訊息的應用程式</li>
+</ul>
+<p>不過在 RabbitMQ 中，根據不同模式會在 Producer 與 Queue 之間加上一層 Exchange。</p>
+<ul>
+<li>Exchange 的工作非很簡單，透過綁定(binding)與 Queue 連結，負責接收來自 Producer 的訊息，然後將訊息推送給 Queue。</li>
+<li>透過定義 Exchange 的類型(type)來判斷要如何處理收到的訊息，是要推送給哪個特定 Queue？還是要推送給多個 Queue？或是應該被丟棄？</li>
+<li>Exchange 的類型(type)有分為 direct, topic, fanout &amp; headers，文章下個段落介紹不同模式時會探討差別。</li>
+</ul>
+<!-- <br></br> -->
+<h2 id="常見的設計模式">常見的設計模式</h2>
+<p>根據 <a href="https://www.rabbitmq.com/getstarted.html" target="_blank" rel="noopener noreffer">RabbitMQ Tutorials</a> 的範例，展示了六種常見的模式，以下簡單做介紹（Python 範例程式碼附在標題後方連結）</p>
+<h3 id="1-simple-模式">1. Simple 模式</h3>
+<p>The simplest thing that does <em>something</em> <a href="https://www.rabbitmq.com/tutorials/tutorial-one-python.html" target="_blank" rel="noopener noreffer">(sample code)</a></p>
+<!--![Simple](01_python-one-overall.png "Simple")-->
+<figure><a class="lightgallery" href="/rabbitmq-intro/01_python-one-overall.png" title="Simple" data-thumbnail="/rabbitmq-intro/01_python-one-overall.png" data-sub-html="<h2>Simple</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="01_python-one-overall.png"
+            data-srcset="/rabbitmq-intro/01_python-one-overall.png, 01_python-one-overall.png 1.5x, /rabbitmq-intro/01_python-one-overall.png 2x"
+            data-sizes="auto"
+            alt="Simple" width="360px" />
+    </a><figcaption class="image-caption">Simple</figcaption>
+    </figure>
+<p>最基本的一種模式，只有一個 Queue(定義 Queue 的名稱)，Producer 直接將訊息傳進這個 Queue(hello)，也只有一個 Consumer 從這個 Queue(hello) 取出訊息。</p>
+<h3 id="2-worker-模式">2. Worker 模式</h3>
+<p>Distributing tasks among workers <a href="https://www.rabbitmq.com/tutorials/tutorial-two-python.html" target="_blank" rel="noopener noreffer">(sample code)</a></p>
+<!--![Worker](02_python-two.png "Worker")-->
+<figure><a class="lightgallery" href="/rabbitmq-intro/02_python-two.png" title="Worker" data-thumbnail="/rabbitmq-intro/02_python-two.png" data-sub-html="<h2>Worker</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="02_python-two.png"
+            data-srcset="/rabbitmq-intro/02_python-two.png, 02_python-two.png 1.5x, /rabbitmq-intro/02_python-two.png 2x"
+            data-sizes="auto"
+            alt="Worker" width="360px" />
+    </a><figcaption class="image-caption">Worker</figcaption>
+    </figure>
+<ul>
+<li>相比 Simple，Worker 模式會有兩個以上的 Consumer(Worker)，從同一個 Queue 取出訊息，加速訊息處理(消化)速度。因此只要連接同一個 Queue，就可以在多台機器上 Consumer 平行處理。</li>
+<li>Consumer 彼此間不會取得相同的訊息，可以透過 <code>prefetch_count</code> 參數，控制每個 Consumer(Worker) 一次取出的訊息量，例如：P 將 1 ~ 10 依序傳進 Queue，<code>prefetch_count = 1</code> ，C1 依序取出 1、3、5、7、9（共五次），C2 依序取出 2、4、6、8、10（共五次）；<code>prefetch_count = 2</code> ，C1 依序取出 1, 2、5, 6、9, 10（共三次），C2 依序取出 3, 4、7, 8（共兩次）。</li>
+</ul>
+<h3 id="3-publishsubscribe-模式">3. Publish/Subscribe 模式</h3>
+<p>Sending messages to many consumers at once <a href="https://www.rabbitmq.com/tutorials/tutorial-three-python.html" target="_blank" rel="noopener noreffer">(sample code)</a></p>
+<!--![Publish/Subscribe](03_python-three.png "Publish/Subscribe")-->
+<figure><a class="lightgallery" href="/rabbitmq-intro/03_python-three.png" title="Publish/Subscribe" data-thumbnail="/rabbitmq-intro/03_python-three.png" data-sub-html="<h2>Publish/Subscribe</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="03_python-three.png"
+            data-srcset="/rabbitmq-intro/03_python-three.png, 03_python-three.png 1.5x, /rabbitmq-intro/03_python-three.png 2x"
+            data-sizes="auto"
+            alt="Publish/Subscribe" width="400px" />
+    </a><figcaption class="image-caption">Publish/Subscribe</figcaption>
+    </figure>
+<ul>
+<li>Publish/Subscribe 模式顧名思義屬，就像你訂閱某個 YT 頻道，當頻道創作者發佈了新影片，連同你的所有訂閱者都會收到通知。</li>
+<li>Producer 不會將訊息直接傳進 Queue，而是交給 <em>Exchange(type=fanout)</em>，由於 <em>fanout 的特性，Exchange</em> 會把訊息廣播給所有綁定的 Queue，每個 Consumer 就會接收到相同的訊息。因此當有另外的系統需要同步接收訊息，只需增加一組 Queue + Producer，綁定這個 <em>Exchange</em> 即可。</li>
+</ul>
+<h3 id="4-routing-模式">4. Routing 模式</h3>
+<p>Receiving messages selectively <a href="https://www.rabbitmq.com/tutorials/tutorial-four-python.html" target="_blank" rel="noopener noreffer">(sample code)</a></p>
+<!--![Routing](04_direct-exchange.png "Routing")-->
+<figure><a class="lightgallery" href="/rabbitmq-intro/04_direct-exchange.png" title="Routing" data-thumbnail="/rabbitmq-intro/04_direct-exchange.png" data-sub-html="<h2>Routing</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="04_direct-exchange.png"
+            data-srcset="/rabbitmq-intro/04_direct-exchange.png, 04_direct-exchange.png 1.5x, /rabbitmq-intro/04_direct-exchange.png 2x"
+            data-sizes="auto"
+            alt="Routing" width="450px" />
+    </a><figcaption class="image-caption">Routing</figcaption>
+    </figure>
+<ul>
+<li>Routing 模式同樣有一層 <em>Exchange(type=direct)</em>，但不同的是 <em>direct</em> 的特性，Exchange 與 Queue 的綁定(binding)還會帶上 routing key，Producer 傳送訊息到 Exchange 時也會帶上 routing key 這個參數。因此可以達到選擇性訊息分流，不同 Consumer 只需要接受到特定 routing 的訊息。</li>
+</ul>
+<!--![Logging system](05_python-four.png "Logging system")-->
+<figure><a class="lightgallery" href="/rabbitmq-intro/05_python-four.png" title="Logging system" data-thumbnail="/rabbitmq-intro/05_python-four.png" data-sub-html="<h2>Logging system</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="05_python-four.png"
+            data-srcset="/rabbitmq-intro/05_python-four.png, 05_python-four.png 1.5x, /rabbitmq-intro/05_python-four.png 2x"
+            data-sizes="auto"
+            alt="Logging system" width="450px" />
+    </a><figcaption class="image-caption">Logging system</figcaption>
+    </figure>
+<ul>
+<li>上圖為一個日誌系統(logging system)的範例，使用兩組 Queue，Q1 只有綁定一個 routing key(error)，因此負責寫檔(log file)的 C1 只會接收 error log messages，可節省硬碟(disk)空間。Q2 則是綁定多個 routing key(info, warning &amp; error)，負責打印到控制台(console)的 C2 仍然可輸出所有層級(level)的 log messages。</li>
+</ul>
+<h3 id="5-topics-模式">5. Topics 模式</h3>
+<p>Receiving messages based on a pattern <a href="https://www.rabbitmq.com/tutorials/tutorial-five-python.html" target="_blank" rel="noopener noreffer">(sample code)</a></p>
+<!--![Topics](06_python-five.png "Topics")-->
+<figure><a class="lightgallery" href="/rabbitmq-intro/06_python-five.png" title="Topics" data-thumbnail="/rabbitmq-intro/06_python-five.png" data-sub-html="<h2>Topics</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="06_python-five.png"
+            data-srcset="/rabbitmq-intro/06_python-five.png, 06_python-five.png 1.5x, /rabbitmq-intro/06_python-five.png 2x"
+            data-sizes="auto"
+            alt="Topics" width="450px" />
+    </a><figcaption class="image-caption">Topics</figcaption>
+    </figure>
+<ul>
+<li>Topics 與 Routing 模式很像，同樣有一層 Exchange(type=topic)，也透過 routing key 來分流訊息，差別在 topic **的特性能夠模糊綁定非固定的 routing key。
+<ul>
+<li>設定模糊 routing key 的 patten 必須是以 <code>.</code>(dot) 分隔的字串，<code>*</code>(star) 只能代替一個單詞、<code>#</code>(bash) 可以代替零個或多個單詞。</li>
+</ul>
+</li>
+<li>我們用上圖的的範例讓你搞懂這到底是啥鬼XD
+<ul>
+<li>假設我們要發送「描述動物的訊息」，訊息將使用由三個單詞（包含兩個 <code>.</code>）組成的 routing key 發送，第一個單詞是“速度”，第二個單詞是顏色”，第三個單詞是“物種”：<celerity>.<colour>.<species>。</li>
+<li>我們將 Exchange 與 Q1 以 “<em>.orange.</em>” 綁定，與 Q2 以 “<em>.</em>.rabbit” 和 “lazy.#” 綁定。這可以理解為：
+<ul>
+<li>Q1 會收到所有關於“橘色動物”的訊息（第二個單詞為 <em>orange</em>）</li>
+<li>Q2 會收到所有關於“兔子”的訊息，以及所有關於“懶惰動物”的訊息。（第三個單詞為 rabbit，或第一個單詞 lazy）</li>
+</ul>
+</li>
+<li>以下為 Producer 傳入的訊息及結果：
+<ol>
+<li>“quick.orange.rabbit” 會進入兩個 Queue：Q1 及 Q2</li>
+<li>“lazy.orange.elephant” 會進入兩個 Queue：Q1 及 Q2</li>
+<li>“quick.orange.fox” 會進入一個 Queue：Q1</li>
+<li>“lazy.brown.fox” 會進入一個 Queue：Q2</li>
+<li>&ldquo;lazy.pink.rabbit&rdquo; 會進入一個 Queue：Q2（僅一次，即使匹配兩個綁定）</li>
+<li>“quick.brown.fox” 不會進入任何 Queue（與任何綁定都不匹配）</li>
+</ol>
+</li>
+<li>再讓我們看一些特殊的案例：
+<ol>
+<li>“orange” 不會進入任何 Queue（違反 “<em>.orange.</em>”，前後各缺少一個單詞）</li>
+<li>“quick.orange.male.rabbit” 不會進入任何 Queue（違反  “<em>.</em>.rabbit”，前後多出一個單詞）</li>
+<li>“lazy.orange.male.rabbit” 會進入一個 Queue：Q2（即使它有四個單詞，也與 “lazy.#” 匹配。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="下載安裝-rabbitmq">下載＆安裝 RabbitMQ</h2>
+<p>介紹完五種模式，你是不是已經很想動手實作看看？ 接下來就要告訴大家如何自己搭建 RabbitMQ，官方有提供 RabbitMQ Server 在不同作業系統(Linux, MacOS &amp; Windows)上的<a href="https://www.rabbitmq.com/download.html" target="_blank" rel="noopener noreffer">安裝指南</a>，不過我還是推薦使用 Docker 建立環境最簡單。</p>
+<h3 id="docker-指令">Docker 指令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># for RabbitMQ 3.9, the latest series</span>
+docker run --rm --name rabbitmq -p 5672:5672 -p 15672:15672 -e <span class="nv">RABBITMQ_DEFAULT_USER</span><span class="o">=</span>root -e <span class="nv">RABBITMQ_DEFAULT_PASS</span><span class="o">=</span><span class="m">1234</span> rabbitmq:management 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>docker run</code> 執行容器</li>
+<li><code>--rm</code> 當容器終止時會自動刪除</li>
+<li><code>--name rabbitmq</code>  將容器命名為 rabbitmq</li>
+<li><code>-p 5672:5672</code> 將本機端的 5672 port 關聯到容器裡的 5672 port（RabbitMQ）</li>
+<li><code>-p 15672:15672</code> 將本機端的 15672 port 關聯到容器裡的 15672 port（Web UI）</li>
+<li><code>-e RABBITMQ_DEFAULT_USER=root</code> 宣告環境變數，連線到 RabbitMQ 的 username</li>
+<li><code>-e RABBITMQ_DEFAULT_PASS=1234</code>  宣告環境變數，連線到 RabbitMQ 的 password</li>
+<li><code>rabbitmq:management</code> 指定容器抓 docker hub 上的 rabbitmq <a href="https://registry.hub.docker.com/_/rabbitmq/" target="_blank" rel="noopener noreffer">official image</a>
+<ul>
+<li>預設為最新版本(3.9)，若想要指定版本可以用 <code>rabbitmq:3.8-management</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="docker-compose-指令">Docker Compose 指令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker"><span class="c"># Create and start container</span><span class="err">
+</span><span class="err"></span>docker-compose -f docker-compose up<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># docker-compose.yml</span><span class="err">
+</span><span class="err"></span>services:<span class="err">
+</span><span class="err"></span>    rabbitmq:<span class="err">
+</span><span class="err"></span>    image: rabbitmq:management<span class="err">
+</span><span class="err"></span>    container_name: rabbitmq<span class="err">
+</span><span class="err"></span>    ports:<span class="err">
+</span><span class="err"></span>        - 5672:5672<span class="err">
+</span><span class="err"></span>        - 15672:15672<span class="err">
+</span><span class="err"></span>    environment:<span class="err">
+</span><span class="err"></span>        - <span class="nv">RABBITMQ_DEFAULT_USER</span><span class="o">=</span>root<span class="err">
+</span><span class="err"></span>        - <span class="nv">RABBITMQ_DEFAULT_PASS</span><span class="o">=</span><span class="m">1234</span><span class="err">
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>docker-compose.yml 檔內的參數定義與 Docker 指令相同</li>
+</ul>
+<p>將 RabbitMQ 啟動後，在瀏覽器 <a href="http://localhost:15672" target="_blank" rel="noopener noreffer">http://localhost:15672</a> 進入 RabbitMQ 的網頁版管理介面，如果能成功進入這個畫面，代表服務 RabbitMQ 已經可以使用了。</p>
+<ul>
+<li>截圖</li>
+</ul>
+<h2 id="web-管理介面">Web 管理介面</h2>
+<p>輸入剛剛設定的 <code>RABBITMQ_DEFAULT_USER</code> 和 <code>RABBITMQ_DEFAULT_PASS</code> 登入，就會進入</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-02-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/rabbitmq-intro/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://enzochang.com/rabbitmq-intro/" data-title="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面" data-hashtags="rabbitmq,message-queue"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://enzochang.com/rabbitmq-intro/" data-hashtag="rabbitmq"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://enzochang.com/rabbitmq-intro/" data-title="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://enzochang.com/rabbitmq-intro/" data-title="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/rabbitmq/">rabbitmq</a>,&nbsp;<a href="/tags/message-queue/">message-queue</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/message-queue/" class="prev" rel="prev" title="[DATA] 訊息佇列 01 - Message Queue(MQ) 介紹"><i class="fas fa-angle-left fa-fw"></i>[DATA] 訊息佇列 01 - Message Queue(MQ) 介紹</a>
+            <a href="/rabbitmq-python/" class="next" rel="next" title="[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例">[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/enzochang/" target="_blank">Enzo Chang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://enzoo.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
