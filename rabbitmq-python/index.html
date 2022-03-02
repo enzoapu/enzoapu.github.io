@@ -34,7 +34,7 @@
                             "url": "https:\/\/enzochang.com\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "rabbitmq, message-queue","wordcount":  21 ,
+                        }],"genre": "posts","keywords": "rabbitmq, message-queue","wordcount":  33 ,
         "url": "https:\/\/enzochang.com\/rabbitmq-python\/","datePublished": "2022-03-01T22:00:00+08:00","dateModified": "2022-03-01T22:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -130,7 +130,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-01">2022-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;21 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-01">2022-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;33 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -143,13 +143,13 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)
-有以下優勢：</p>
-<ul>
-<li>RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。</li>
-<li>RabbitMQ 為大多數流行的程式語言提供了多樣的<a href="https://www.rabbitmq.com/devtools.html" target="_blank" rel="noopener noreffer">開發套件包</a>。(Python, Java, Ruby, PHP, C#, JS, Go, etc.)</li>
-<li>RabbitMQ 提供了一個 Web 使用者介面來管理權限並監控各種狀態、指標。</li>
-</ul></div><div class="post-footer" id="post-footer">
+<p>這陣子團隊在開發<strong>相似商品搜尋</strong>的 ML Product，為了要把系統架構解耦，改成<strong>異步分散式處理</strong>，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過三篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。</p>
+<ol>
+<li><a href="/message-queue/" rel="">[DATA] 訊息佇列 01 - Message Queue(MQ) 介紹</a></li>
+<li><a href="/rabbitmq-intro/" rel="">[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面</a></li>
+<li><a href="/rabbitmq-python/" rel="">[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例</a><em>（本篇）</em></li>
+</ol>
+<p>內文待續&hellip;</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

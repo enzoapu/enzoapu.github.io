@@ -3,8 +3,10 @@
 <!--more-->
 
 ## 前言
-RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)
-有以下優勢：
-- RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。
-- RabbitMQ 為大多數流行的程式語言提供了多樣的[開發套件包](https://www.rabbitmq.com/devtools.html)。(Python, Java, Ruby, PHP, C#, JS, Go, etc.)
-- RabbitMQ 提供了一個 Web 使用者介面來管理權限並監控各種狀態、指標。
+這陣子團隊在開發**相似商品搜尋**的 ML Product，為了要把系統架構解耦，改成**異步分散式處理**，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層。我將透過三篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。
+
+1. [[DATA] 訊息佇列 01 - Message Queue(MQ) 介紹](/message-queue/)
+2. [[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面](/rabbitmq-intro/)
+3. [[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例](/rabbitmq-python/)*（本篇）*
+
+內文待續...

@@ -17,6 +17,6 @@
     <pubDate>Mon, 28 Feb 2022 22:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/rabbitmq-intro/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)，RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。]]></description>
 </item></channel>
 </rss>

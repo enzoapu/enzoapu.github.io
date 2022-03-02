@@ -10,6 +10,6 @@
     <pubDate>Sun, 13 Feb 2022 20:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/cicd-intro/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[自從去年初啟動“敏捷”(Scrum)導入，幾乎都在適應(迭代)各種流程、方法和工具，工程實踐方面的單元測試和 CI/CD 推行計畫卻一直往後延。如今，因應團隊一個大型系統要進行前後端分離重構，加上大家對於容器化技術越來越熟悉，同時又有優秀的新夥伴加入，可謂是天時地利人和啊，我們終於要開始在“開發”上實踐敏捷，啟動 CI/CD 導入！ 這此之前我對 CI/CD 的理解幾乎是一片空白，因此想利用寫文章記錄過程中的學習心得與知識整理。首先將介紹「什麼是 CI/CD？」、「為什麼要 CI/CD？」、「CI/CD 如何做？」以及「常見的 CI/CD 工具」]]></description>
 </item></channel>
 </rss>

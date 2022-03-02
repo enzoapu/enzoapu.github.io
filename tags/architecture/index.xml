@@ -10,6 +10,6 @@
     <pubDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/message-queue/</guid>
-    <description><![CDATA[這陣子在開發一個 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層，這篇文章將分享我在架設 RabbitMQ 與使用 Python 實作上的學習。]]></description>
+    <description><![CDATA[Message Queue(MQ)是一種訊息傳遞仲介，架構中擁有三個角色，分別為 Producer、Broker 及 Consumer，提供不同程序(process)或不同系統(system)的非同步(asynchronous)溝通。]]></description>
 </item></channel>
 </rss>

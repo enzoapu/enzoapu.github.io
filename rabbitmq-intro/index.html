@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面 - 恩佐思維</title><meta name="Description" content="Data &amp; Agile"><meta property="og:title" content="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面" />
-<meta property="og:description" content="" />
+        <title>[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面 - 恩佐思維</title><meta name="Description" content="RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)，RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。"><meta property="og:title" content="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面" />
+<meta property="og:description" content="RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)，RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://enzochang.com/rabbitmq-intro/" /><meta property="og:image" content="https://enzochang.com/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-02-28T22:00:00+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://enzochang.com/logo.png"/>
 
 <meta name="twitter:title" content="[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)，RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。"/>
 <meta name="application-name" content="Enzo Thinking">
 <meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,7 +34,7 @@
                             "url": "https:\/\/enzochang.com\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "rabbitmq, message-queue","wordcount":  481 ,
+                        }],"genre": "posts","keywords": "rabbitmq, message-queue","wordcount":  514 ,
         "url": "https:\/\/enzochang.com\/rabbitmq-intro\/","datePublished": "2022-02-28T22:00:00+08:00","dateModified": "2022-02-28T22:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -45,7 +45,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Enzo Chang"
-            },"description": ""
+            },"description": "RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)，RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -130,7 +130,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-28">2022-02-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;481 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-28">2022-02-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;514 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -140,6 +140,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
+    <li><a href="#rabbitmq-簡介">RabbitMQ 簡介</a></li>
     <li><a href="#rabbitmq-架構">RabbitMQ 架構</a></li>
     <li><a href="#常見的設計模式">常見的設計模式</a>
       <ul>
@@ -161,6 +162,13 @@
 </nav></div>
             </div><div class="content" id="content"><!-- # RabbitMQ 介紹 -->
 <h2 id="前言">前言</h2>
+<p>這陣子團隊在開發<strong>相似商品搜尋</strong>的 ML Product，為了要把系統架構解耦，改成<strong>異步分散式處理</strong>，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過三篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。</p>
+<ol>
+<li><a href="/message-queue/" rel="">[DATA] 訊息佇列 01 - Message Queue(MQ) 介紹</a></li>
+<li><a href="/rabbitmq-intro/" rel="">[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面</a><em>（本篇）</em></li>
+<li><a href="/rabbitmq-python/" rel="">[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例</a></li>
+</ol>
+<h2 id="rabbitmq-簡介">RabbitMQ 簡介</h2>
 <p>RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)
 有以下優勢：</p>
 <ul>
