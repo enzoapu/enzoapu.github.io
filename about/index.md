@@ -17,7 +17,7 @@
 
 期許自己能夠堅持寫文，幫助自己也能幫助到別人，也歡迎你與我連結、互相交流。
 
-### 聯繫我
+### 聯繫方式
 
 * Facebook：[https://www.facebook.com/enzoapu](https://www.facebook.com/enzoapu)
 * Linkedin：[https://www.linkedin.com/in/enzochang](https://www.linkedin.com/in/enzochang)
