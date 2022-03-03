@@ -4,33 +4,19 @@
         <link>https://enzochang.com/posts/</link>
         <description>All Posts | 恩佐思維</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 01 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例</title>
-    <link>https://enzochang.com/rabbitmq-python/</link>
-    <pubDate>Tue, 01 Mar 2022 22:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://enzochang.com/rabbitmq-python/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面</title>
-    <link>https://enzochang.com/rabbitmq-intro/</link>
-    <pubDate>Mon, 28 Feb 2022 22:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://enzochang.com/rabbitmq-intro/</guid>
-    <description><![CDATA[RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)，RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。]]></description>
-</item><item>
-    <title>[DATA] 訊息佇列 01 - Message Queue(MQ) 介紹</title>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 03 Mar 2022 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</title>
     <link>https://enzochang.com/message-queue/</link>
-    <pubDate>Sun, 27 Feb 2022 20:00:00 &#43;0800</pubDate>
+    <pubDate>Thu, 03 Mar 2022 20:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/message-queue/</guid>
-    <description><![CDATA[Message Queue(MQ)是一種訊息傳遞仲介，架構中擁有三個角色，分別為 Producer、Broker 及 Consumer，提供不同程序(process)或不同系統(system)的非同步(asynchronous)溝通。]]></description>
+    <description><![CDATA[這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。]]></description>
 </item><item>
     <title>[DevOps] CI/CD 介紹 - 基礎概念與導入準備</title>
     <link>https://enzochang.com/cicd-intro/</link>
     <pubDate>Sun, 13 Feb 2022 20:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/cicd-intro/</guid>
-    <description><![CDATA[自從去年初啟動“敏捷”(Scrum)導入，幾乎都在適應(迭代)各種流程、方法和工具，工程實踐方面的單元測試和 CI/CD 推行計畫卻一直往後延。如今，因應團隊一個大型系統要進行前後端分離重構，加上大家對於容器化技術越來越熟悉，同時又有優秀的新夥伴加入，可謂是天時地利人和啊，我們終於要開始在“開發”上實踐敏捷，啟動 CI/CD 導入！ 這此之前我對 CI/CD 的理解幾乎是一片空白，因此想利用寫文章記錄過程中的學習心得與知識整理。首先將介紹「什麼是 CI/CD？」、「為什麼要 CI/CD？」、「CI/CD 如何做？」以及「常見的 CI/CD 工具」]]></description>
+    <description><![CDATA[自從去年初啟動“敏捷”(Scrum)導入，幾乎都在適應(迭代)各種流程、方法和工具，工程實踐方面的單元測試和 CI/CD 推行計畫卻一直往後延。如今，因應團隊一個大型系統要進行前後端分離重構，加上大家對於容器化技術越來越熟悉，同時又有優秀的新夥伴加入，可謂是天時地利人和啊，我們終於要啟動 CI/CD 導入！]]></description>
 </item></channel>
 </rss>
