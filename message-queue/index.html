@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用 - 恩佐思維</title><meta name="Description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。"><meta property="og:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用" />
-<meta property="og:description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。" />
+        <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用 - 恩佐思維</title><meta name="Description" content="這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在學習 RabbitMQ 與使用 Python 實作的學習。"><meta property="og:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用" />
+<meta property="og:description" content="這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在學習 RabbitMQ 與使用 Python 實作的學習。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://enzochang.com/message-queue/" /><meta property="og:image" content="https://enzochang.com/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-03T20:00:00+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://enzochang.com/logo.png"/>
 
 <meta name="twitter:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用"/>
-<meta name="twitter:description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。"/>
+<meta name="twitter:description" content="這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在學習 RabbitMQ 與使用 Python 實作的學習。"/>
 <meta name="application-name" content="Enzo Thinking">
 <meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,7 +34,7 @@
                             "url": "https:\/\/enzochang.com\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "message-queue, system-design, architecture","wordcount":  201 ,
+                        }],"genre": "posts","keywords": "message-queue, system-design, architecture","wordcount":  206 ,
         "url": "https:\/\/enzochang.com\/message-queue\/","datePublished": "2022-03-03T20:00:00+08:00","dateModified": "2022-02-28T01:43:18+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -45,7 +45,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Enzo Chang"
-            },"description": "這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改成異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 \u0026 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。"
+            },"description": "這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 \u0026 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在學習 RabbitMQ 與使用 Python 實作的學習。"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -130,7 +130,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-03">2022-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;201 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-03">2022-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;206 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -156,7 +156,7 @@
 </nav></div>
             </div><div class="content" id="content"><!-- # 訊息佇列 Message Queue(MQ) 介紹 -->
 <h2 id="前言">前言</h2>
-<p>這陣子團隊在開發<strong>相似商品搜尋</strong>的 ML Product，為了要把系統架構解耦，改成<strong>異步分散式處理</strong>，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。</p>
+<p>這陣子團隊在開發<strong>相似商品比對</strong>的 ML Product，為了要把系統架構解耦，改為<strong>異步分散式處理</strong>，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料處理 &amp; 特徵向量轉換）的通信中間層。我將透過四篇文章分享我在學習 RabbitMQ 與使用 Python 實作的學習。</p>
 <ol>
 <li><a href="/message-queue/" rel="">[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</a>（本篇）</li>
 <li><em>[DATA] 訊息佇列 02 - RabbitMQ 簡介與五種設計模式（待完成）</em></li>
@@ -232,11 +232,11 @@ Message Queue 常見的開源工具有 RabbitMQ、Redis、Kafka（不同特性�
             <i class="icon fas fa-info-circle fa-fw"></i>RabbitMQ<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">下一篇文章，我將介紹我們所使用的 <strong>RabbitMQ</strong> 有哪些特性？設計模式、架設方法等</div>
+            <div class="admonition-content">下一篇文章，我將介紹目前團隊所使用的 <strong>RabbitMQ</strong> 有哪些優勢、設計模式、架設方法等等。</div>
         </div>
     </div>
 <h2 id="實際應用">實際應用</h2>
-<p>這是一個相似商品比對產品的 ETL 架構圖，任務是每天將商品資訊（圖片 &amp; 文字）進行向量轉換，分為會使用到 CV 模型和 NLP 模型，由於 GPU 運算負擔比較重（機器資源、計算時間等），因此將系統拆分為下圖左邊紅底的 Producer 和右邊藍底的 Consumer。</p>
+<p>這是某相似商品比對產品的 ETL 架構圖（擷取簡化部分），任務是每天將商品資訊（圖片 &amp; 文字）進行向量轉換，分為會使用到 CV 模型和 NLP 模型，由於 <strong>GPU 運算負擔</strong>比較重（機器資源、計算時間等），因此將系統拆分為下圖左邊紅底的 Producer 和右邊藍底的 Consumer。</p>
 <figure><a class="lightgallery" href="/message-queue/real_case.png" title="案例架構圖" data-thumbnail="/message-queue/real_case.png" data-sub-html="<h2>案例架構圖</h2>">
         <img
             class="lazyload"
@@ -247,8 +247,8 @@ Message Queue 常見的開源工具有 RabbitMQ、Redis、Kafka（不同特性�
             alt="案例架構圖" width="600px" />
     </a><figcaption class="image-caption">案例架構圖</figcaption>
     </figure>
-<p>兩個系統彼此不會直接溝通，而是將 Message 透過 Broker 暫存與傳遞，分為 Image Queue 和 Text Queue，並可以根據目標完成時間來調整 Producer 和 Consumer 的數量，加速任務的消化。</p>
-<p>這樣的設計相對過去採用 HTTP 連線的效率好很多（不需互相等待）；部署在不同規格的機器(VM)，Producer 選用低規格的機器，Consumer 選用搭載 GPU 的機器，也可以大大地降低成本。</p>
+<p>Producer 負責<strong>資料過濾</strong>(data filtering)<strong>特徵提取</strong>(feature extraction)；Consumer 負責<strong>任務收集</strong>(task collecting)和<strong>向量轉換</strong>(vectorization)。兩個系統彼此不會直接溝通，而是將 Message 透過 Broker 暫存與傳遞，分為 Image Queue 和 Text Queue，並可以根據目標完成時間來調整 Producer 和 Consumer 的數量，加速任務的消化。</p>
+<p>這樣的設計相對過去採用 HTTP 連線<strong>效率提高</strong>（不需互相等待）；部署在不同規格的機器(VM)，Producer 選用低規格的機器，Consumer 選用搭載 GPU 的機器，也可以大大地<strong>降低成本</strong>。</p>
 <h2 id="參考">參考</h2>
 <p><a href="https://homuchen.com/posts/message-queue-advantages-use-cases/" target="_blank" rel="noopener noreffer">https://homuchen.com/posts/message-queue-advantages-use-cases/</a></p>
 <p><a href="https://godleon.github.io/blog/ChatOps/message-queue-concepts/" target="_blank" rel="noopener noreffer">https://godleon.github.io/blog/ChatOps/message-queue-concepts/</a></p>

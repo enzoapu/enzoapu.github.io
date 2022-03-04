@@ -6,7 +6,7 @@
 
 ## 前言
 
-這陣子團隊在開發**相似商品搜尋**的 ML Product，為了要把系統架構解耦，改成**異步分散式處理**，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在架設 RabbitMQ 與使用 Python 實作的學習。
+這陣子團隊在開發**相似商品比對**的 ML Product，為了要把系統架構解耦，改為**異步分散式處理**，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料處理 & 特徵向量轉換）的通信中間層。我將透過四篇文章分享我在學習 RabbitMQ 與使用 Python 實作的學習。
 
 1. [[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用](/message-queue/)（本篇）
 2. *[DATA] 訊息佇列 02 - RabbitMQ 簡介與五種設計模式（待完成）*
@@ -59,19 +59,19 @@ Message Queue 常見的開源工具有 RabbitMQ、Redis、Kafka（不同特性�
 雲端服務則是像是 GCP 的 Cloud Pub/Sub 和 AWS 的 Amazon SQS。
 
 {{< admonition type=info title="RabbitMQ" open=true >}}
-下一篇文章，我將介紹我們所使用的 **RabbitMQ** 有哪些特性？設計模式、架設方法等
+下一篇文章，我將介紹目前團隊所使用的 **RabbitMQ** 有哪些優勢、設計模式、架設方法等等。
 {{< /admonition >}}
 
 
 ## 實際應用
 
-這是一個相似商品比對產品的 ETL 架構圖，任務是每天將商品資訊（圖片 & 文字）進行向量轉換，分為會使用到 CV 模型和 NLP 模型，由於 GPU 運算負擔比較重（機器資源、計算時間等），因此將系統拆分為下圖左邊紅底的 Producer 和右邊藍底的 Consumer。
+這是某相似商品比對產品的 ETL 架構圖（擷取簡化部分），任務是每天將商品資訊（圖片 & 文字）進行向量轉換，分為會使用到 CV 模型和 NLP 模型，由於 **GPU 運算負擔**比較重（機器資源、計算時間等），因此將系統拆分為下圖左邊紅底的 Producer 和右邊藍底的 Consumer。
 
 {{< image alt="案例架構圖" src="real_case.png" caption="案例架構圖" height="" width="600px">}}
 
-兩個系統彼此不會直接溝通，而是將 Message 透過 Broker 暫存與傳遞，分為 Image Queue 和 Text Queue，並可以根據目標完成時間來調整 Producer 和 Consumer 的數量，加速任務的消化。
+Producer 負責**資料過濾**(data filtering)**特徵提取**(feature extraction)；Consumer 負責**任務收集**(task collecting)和**向量轉換**(vectorization)。兩個系統彼此不會直接溝通，而是將 Message 透過 Broker 暫存與傳遞，分為 Image Queue 和 Text Queue，並可以根據目標完成時間來調整 Producer 和 Consumer 的數量，加速任務的消化。
 
-這樣的設計相對過去採用 HTTP 連線的效率好很多（不需互相等待）；部署在不同規格的機器(VM)，Producer 選用低規格的機器，Consumer 選用搭載 GPU 的機器，也可以大大地降低成本。
+這樣的設計相對過去採用 HTTP 連線**效率提高**（不需互相等待）；部署在不同規格的機器(VM)，Producer 選用低規格的機器，Consumer 選用搭載 GPU 的機器，也可以大大地**降低成本**。
 
 ## 參考
 [https://homuchen.com/posts/message-queue-advantages-use-cases/](https://homuchen.com/posts/message-queue-advantages-use-cases/)
