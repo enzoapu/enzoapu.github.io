@@ -237,6 +237,7 @@ Message Queue 常見的開源工具有 RabbitMQ、Redis、Kafka（不同特性�
     </div>
 <h2 id="實際應用">實際應用</h2>
 <p>這是某相似商品比對產品的 ETL 架構圖（擷取簡化部分），任務是每天將商品資訊（圖片 &amp; 文字）進行向量轉換，分為會使用到 CV 模型和 NLP 模型，由於 <strong>GPU 運算負擔</strong>比較重（機器資源、計算時間等），因此將系統拆分為下圖左邊紅底的 Producer 和右邊藍底的 Consumer。</p>
+<br>
 <figure><a class="lightgallery" href="/message-queue/real_case.png" title="案例架構圖" data-thumbnail="/message-queue/real_case.png" data-sub-html="<h2>案例架構圖</h2>">
         <img
             class="lazyload"

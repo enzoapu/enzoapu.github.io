@@ -67,6 +67,8 @@ Message Queue 常見的開源工具有 RabbitMQ、Redis、Kafka（不同特性�
 
 這是某相似商品比對產品的 ETL 架構圖（擷取簡化部分），任務是每天將商品資訊（圖片 & 文字）進行向量轉換，分為會使用到 CV 模型和 NLP 模型，由於 **GPU 運算負擔**比較重（機器資源、計算時間等），因此將系統拆分為下圖左邊紅底的 Producer 和右邊藍底的 Consumer。
 
+<br>
+
 {{< image alt="案例架構圖" src="real_case.png" caption="案例架構圖" height="" width="600px">}}
 
 Producer 負責**資料過濾**(data filtering)**特徵提取**(feature extraction)；Consumer 負責**任務收集**(task collecting)和**向量轉換**(vectorization)。兩個系統彼此不會直接溝通，而是將 Message 透過 Broker 暫存與傳遞，分為 Image Queue 和 Text Queue，並可以根據目標完成時間來調整 Producer 和 Consumer 的數量，加速任務的消化。
