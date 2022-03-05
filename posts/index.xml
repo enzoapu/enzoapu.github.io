@@ -10,7 +10,7 @@
     <pubDate>Thu, 03 Mar 2022 20:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/message-queue/</guid>
-    <description><![CDATA[這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。]]></description>
+    <description><![CDATA[這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。]]></description>
 </item><item>
     <title>[DevOps] CI/CD 介紹 - 基礎概念與導入準備</title>
     <link>https://enzochang.com/cicd-intro/</link>

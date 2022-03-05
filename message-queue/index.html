@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta content="Message Queue, RabbitMQ, 訊息佇列" name="keywords">
         <meta name="google-site-verification" content="C0V2SROPoRYz0zPWpfXKWVffXgbrLJR-yxL0pmdVip8" />
-        <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用 - 恩佐思維</title><meta name="Description" content="這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"><meta property="og:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用" />
-<meta property="og:description" content="這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。" />
+        <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用 - 恩佐思維</title><meta name="Description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"><meta property="og:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用" />
+<meta property="og:description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://enzochang.com/message-queue/" /><meta property="og:image" content="https://enzochang.com/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-03T20:00:00+08:00" />
@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://enzochang.com/logo.png"/>
 
 <meta name="twitter:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用"/>
-<meta name="twitter:description" content="這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"/>
+<meta name="twitter:description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"/>
 <meta name="application-name" content="Enzo Thinking">
 <meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -47,7 +47,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Enzo Chang"
-            },"description": "這陣子團隊在開發相似商品比對的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 \u0026 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"
+            },"description": "這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 \u0026 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"
     }
     </script>
             
@@ -169,7 +169,7 @@
 </nav></div>
             </div><div class="content" id="content"><!-- # 訊息佇列 Message Queue(MQ) 介紹 -->
 <h2 id="前言">前言</h2>
-<p>這陣子團隊在開發<strong>相似商品比對</strong>的 ML Product，為了要把系統架構解耦，改為<strong>異步分散式處理</strong>，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料處理 &amp; 特徵向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。</p>
+<p>這陣子團隊在開發<strong>相似商品搜尋</strong>的 ML Product，為了要把系統架構解耦，改為<strong>異步分散式處理</strong>，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料處理 &amp; 特徵向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。</p>
 <ol>
 <li><a href="/message-queue/" rel="">[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</a>（本篇）</li>
 <li><em>[DATA] 訊息佇列 02 - RabbitMQ 簡介與五種設計模式（待完成）</em></li>
