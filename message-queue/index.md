@@ -8,8 +8,11 @@
 
 這陣子團隊在開發**相似商品搜尋**的 ML Product，為了要把系統架構解耦，改為**異步分散式處理**，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料處理 & 特徵向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。
 
+<br>
+
+**[ 系列文章目錄 ]**
 1. [[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用](/message-queue/)（本篇）
-2. *[DATA] 訊息佇列 02 - RabbitMQ 簡介與五種設計模式（待完成）*
+2. *[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式（待完成）*
 2. *[DATA] 訊息佇列 03 - RabbitMQ 架設方式與操作管理介面（待完成）*
 3. *[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例（待完成）*
 <!-- 2. [[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面](/rabbitmq-intro/)

@@ -36,7 +36,7 @@
                             "url": "https:\/\/enzochang.com\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "message-queue, system-design, architecture","wordcount":  206 ,
+                        }],"genre": "posts","keywords": "message-queue, system-design, architecture","wordcount":  211 ,
         "url": "https:\/\/enzochang.com\/message-queue\/","datePublished": "2022-03-03T20:00:00+08:00","dateModified": "2022-02-28T01:43:18+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -140,10 +140,10 @@
 <main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-03">2022-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;206 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-03">2022-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;211 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -170,9 +170,11 @@
             </div><div class="content" id="content"><!-- # 訊息佇列 Message Queue(MQ) 介紹 -->
 <h2 id="前言">前言</h2>
 <p>這陣子團隊在開發<strong>相似商品搜尋</strong>的 ML Product，為了要把系統架構解耦，改為<strong>異步分散式處理</strong>，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料處理 &amp; 特徵向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。</p>
+<br>
+<p><strong>[ 系列文章目錄 ]</strong></p>
 <ol>
 <li><a href="/message-queue/" rel="">[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</a>（本篇）</li>
-<li><em>[DATA] 訊息佇列 02 - RabbitMQ 簡介與五種設計模式（待完成）</em></li>
+<li><em>[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式（待完成）</em></li>
 <li><em>[DATA] 訊息佇列 03 - RabbitMQ 架設方式與操作管理介面（待完成）</em></li>
 <li><em>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例（待完成）</em></li>
 </ol>
