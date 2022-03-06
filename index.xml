@@ -4,9 +4,16 @@
         <link>https://enzochang.com/</link>
         <description>Data &amp; Agile</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 03 Mar 2022 20:00:00 &#43;0800</lastBuildDate>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Mar 2022 21:00:00 &#43;0800</lastBuildDate>
             <atom:link href="https://enzochang.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式</title>
+    <link>https://enzochang.com/rabbitmq-intro/</link>
+    <pubDate>Sun, 06 Mar 2022 21:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://enzochang.com/rabbitmq-intro/</guid>
+    <description><![CDATA[上一篇文章介紹完 Message Queue 是什麼後，這次要介紹的是知名且易用的實作工具 RabbitMQ，本篇文章將帶大家認識 RabbitMQ 的架構以及 5 種設計模式。]]></description>
+</item><item>
     <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</title>
     <link>https://enzochang.com/message-queue/</link>
     <pubDate>Thu, 03 Mar 2022 20:00:00 &#43;0800</pubDate>

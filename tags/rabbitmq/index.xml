@@ -4,19 +4,12 @@
         <link>https://enzochang.com/tags/rabbitmq/</link>
         <description>rabbitmq - Tag - 恩佐思維</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 01 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/rabbitmq/" rel="self" type="application/rss+xml" /><item>
-    <title>[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例</title>
-    <link>https://enzochang.com/rabbitmq-python/</link>
-    <pubDate>Tue, 01 Mar 2022 22:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://enzochang.com/rabbitmq-python/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面</title>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Mar 2022 21:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/rabbitmq/" rel="self" type="application/rss+xml" /><item>
+    <title>[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式</title>
     <link>https://enzochang.com/rabbitmq-intro/</link>
-    <pubDate>Mon, 28 Feb 2022 22:00:00 &#43;0800</pubDate>
+    <pubDate>Sun, 06 Mar 2022 21:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/rabbitmq-intro/</guid>
-    <description><![CDATA[RabbitMQ 是使用廣泛的輕量級開源工具，支持多種訊息傳遞協定(e.g. AMQP 0-9-1)，RabbitMQ 容易在本地端和雲端部署，滿足大規模(分散式)、高可用性的需求。]]></description>
+    <description><![CDATA[上一篇文章介紹完 Message Queue 是什麼後，這次要介紹的是知名且易用的實作工具 RabbitMQ，本篇文章將帶大家認識 RabbitMQ 的架構以及 5 種設計模式。]]></description>
 </item></channel>
 </rss>
