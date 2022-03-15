@@ -4,13 +4,13 @@
         <link>https://enzochang.com/tags/rabbitmq/</link>
         <description>rabbitmq - Tag - 恩佐思維</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 07 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/rabbitmq/" rel="self" type="application/rss+xml" /><item>
-    <title>[DATA] 訊息佇列 03 - RabbitMQ 架設方式與操作管理介面</title>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 15 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/rabbitmq/" rel="self" type="application/rss+xml" /><item>
+    <title>[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面</title>
     <link>https://enzochang.com/rabbitmq-management-interface/</link>
-    <pubDate>Mon, 07 Mar 2022 22:00:00 &#43;0800</pubDate>
+    <pubDate>Tue, 15 Mar 2022 22:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/rabbitmq-management-interface/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行程式碼就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。]]></description>
 </item><item>
     <title>[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式</title>
     <link>https://enzochang.com/rabbitmq-intro/</link>

@@ -12,7 +12,7 @@
 **[ 系列文章目錄 ]**
 1. [[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用](/message-queue/)
 2. [[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式](/rabbitmq-intro/)（本篇）
-3. *[DATA] 訊息佇列 03 - RabbitMQ 架設方式與操作管理介面（待完成）*
+3. [[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面](/rabbitmq-management-interface/)
 4. *[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例（待完成）*
 
 ## RabbitMQ 簡介
@@ -135,7 +135,7 @@ Topics 與 Routing 模式很像，同樣有一層 `Exchange (type=topic)`，也�
 {{< /admonition >}}
 
 ## 參考
-[https://godleon.github.io/blog/ChatOps/message-queue-concepts/](https://godleon.github.io/blog/ChatOps/message-queue-concepts/)
+https://godleon.github.io/blog/ChatOps/message-queue-concepts/
 
 https://kucw.github.io/blog/2020/11/rabbitmq/
 
@@ -144,4 +144,7 @@ https://homuchen.com/posts/message-queue-advantages-use-cases/
 https://www.cloudamqp.com/blog/part1-rabbitmq-for-beginners-what-is-rabbitmq.html
 
 https://www.cloudamqp.com/docs/amqp.html
+
+<br>
+<br>
 
