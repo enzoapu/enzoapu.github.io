@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta content="RabbitMQ 架設, RabbitMQ 網頁介面, RabbitMQ Web UI" name="keywords">
         <meta name="google-site-verification" content="C0V2SROPoRYz0zPWpfXKWVffXgbrLJR-yxL0pmdVip8" />
-        <title>[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面 - 恩佐思維</title><meta name="Description" content="上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行程式碼就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。"><meta property="og:title" content="[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面" />
-<meta property="og:description" content="上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行程式碼就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。" />
+        <title>[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面 - 恩佐思維</title><meta name="Description" content="上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行指令就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。"><meta property="og:title" content="[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面" />
+<meta property="og:description" content="上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行指令就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://enzochang.com/rabbitmq-management-interface/" /><meta property="og:image" content="https://enzochang.com/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-15T22:00:00+08:00" />
@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://enzochang.com/logo.png"/>
 
 <meta name="twitter:title" content="[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面"/>
-<meta name="twitter:description" content="上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行程式碼就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。"/>
+<meta name="twitter:description" content="上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行指令就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。"/>
 <meta name="application-name" content="Enzo Thinking">
 <meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -47,7 +47,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Enzo Chang"
-            },"description": "上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行程式碼就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。"
+            },"description": "上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行指令就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。"
     }
     </script>
             
@@ -180,7 +180,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行程式碼就可以在你本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。</p>
+<p>上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行指令就可以在你本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。</p>
 <br>
 <p><strong>[ 系列文章目錄 ]</strong></p>
 <ol>

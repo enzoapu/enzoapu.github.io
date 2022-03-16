@@ -10,6 +10,6 @@
     <pubDate>Tue, 15 Mar 2022 22:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://enzochang.com/rabbitmq-management-interface/</guid>
-    <description><![CDATA[上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行程式碼就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。]]></description>
+    <description><![CDATA[上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行指令就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。]]></description>
 </item></channel>
 </rss>
