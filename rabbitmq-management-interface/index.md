@@ -116,11 +116,11 @@ services:
 ### Queues
 查看並管理每一條 Queue 的訊息(messages)狀態與吞吐量。
 
-![RabbitMQ Web UI - Login](rabbitmq-ui-queues.png "RabbitMQ Web UI - Login")
+![RabbitMQ Web UI - Queues](rabbitmq-ui-queues.png "RabbitMQ Web UI - Queues")
 
 #### 新增 Queue
 輸入自訂 **Queue name**（唯一值），並設定必要及可選的參數。
-![RabbitMQ Web UI - Login](rabbitmq-ui-queues-add.png "RabbitMQ Web UI - Login")
+![Add Queue](rabbitmq-ui-queues-add.png "Add Queue")
 
 **Durablity**
 - Durable 在 RabbitMQ 關閉/重啟後訊息還會留存；Transient 在 RabbitMQ 關閉/重啟後就不存在了。
@@ -160,17 +160,17 @@ Queue 的訊息可能會因為過期（MMessage TTL）或超過限制（Max leng
 
 #### Publish / Get message
 你可以在介面上試著推送(Publish)訊息，再取出(Get)訊息，你將依序地得到這些訊息。
-![RabbitMQ Web UI - Login](rabbitmq-ui-queues-io.png "RabbitMQ Web UI - Login")
+![Publish / Get message](rabbitmq-ui-queues-io.png "Publish / Get message")
 
 測試的同時你可觀察訊息圖表的即時變化。（網頁預設 Refresh every 5 seconds）
-![RabbitMQ Web UI - Login](rabbitmq-ui-queues-view.png "RabbitMQ Web UI - Login")
+![Queue Overview](rabbitmq-ui-queues-view.png "Queue Overview")
 
 
 
 ### Admin
 最初使用的 DEFAULT 帳密是最高權限使用者，若想把帳號分給其他人，可在這個頁面管理 Users 或新增 User。
 
-![RabbitMQ Web UI - Login](rabbitmq-ui-users.png "RabbitMQ Web UI - Login")
+![RabbitMQ Web UI - Admin](rabbitmq-ui-users.png "RabbitMQ Web UI - Admin")
 
 ## 參考
 https://www.rabbitmq.com/queues.html

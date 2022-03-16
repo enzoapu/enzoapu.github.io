@@ -36,7 +36,7 @@
                             "url": "https:\/\/enzochang.com\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "rabbitmq, web-user-interface, docker","wordcount":  529 ,
+                        }],"genre": "posts","keywords": "rabbitmq, web-user-interface, docker","wordcount":  508 ,
         "url": "https:\/\/enzochang.com\/rabbitmq-management-interface\/","datePublished": "2022-03-15T22:00:00+08:00","dateModified": "2022-03-15T22:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -143,7 +143,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;529 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;508 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -378,7 +378,7 @@ docker-compose -f docker-compose.yml up
     </figure></p>
 <h3 id="queues">Queues</h3>
 <p>查看並管理每一條 Queue 的訊息(messages)狀態與吞吐量。</p>
-<p><figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues.png" title="RabbitMQ Web UI - Login" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues.png" data-sub-html="<h2>RabbitMQ Web UI - Login</h2><p>RabbitMQ Web UI - Login</p>">
+<p><figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues.png" title="RabbitMQ Web UI - Queues" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues.png" data-sub-html="<h2>RabbitMQ Web UI - Queues</h2><p>RabbitMQ Web UI - Queues</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -386,11 +386,11 @@ docker-compose -f docker-compose.yml up
             data-srcset="/rabbitmq-management-interface/rabbitmq-ui-queues.png, rabbitmq-ui-queues.png 1.5x, /rabbitmq-management-interface/rabbitmq-ui-queues.png 2x"
             data-sizes="auto"
             alt="/rabbitmq-management-interface/rabbitmq-ui-queues.png" />
-    </a><figcaption class="image-caption">RabbitMQ Web UI - Login</figcaption>
+    </a><figcaption class="image-caption">RabbitMQ Web UI - Queues</figcaption>
     </figure></p>
 <h4 id="新增-queue">新增 Queue</h4>
 <p>輸入自訂 <strong>Queue name</strong>（唯一值），並設定必要及可選的參數。
-<figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues-add.png" title="RabbitMQ Web UI - Login" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues-add.png" data-sub-html="<h2>RabbitMQ Web UI - Login</h2><p>RabbitMQ Web UI - Login</p>">
+<figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues-add.png" title="Add Queue" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues-add.png" data-sub-html="<h2>Add Queue</h2><p>Add Queue</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -398,7 +398,7 @@ docker-compose -f docker-compose.yml up
             data-srcset="/rabbitmq-management-interface/rabbitmq-ui-queues-add.png, rabbitmq-ui-queues-add.png 1.5x, /rabbitmq-management-interface/rabbitmq-ui-queues-add.png 2x"
             data-sizes="auto"
             alt="/rabbitmq-management-interface/rabbitmq-ui-queues-add.png" />
-    </a><figcaption class="image-caption">RabbitMQ Web UI - Login</figcaption>
+    </a><figcaption class="image-caption">Add Queue</figcaption>
     </figure></p>
 <p><strong>Durablity</strong></p>
 <ul>
@@ -451,7 +451,7 @@ docker-compose -f docker-compose.yml up
     </div>
 <h4 id="publish--get-message">Publish / Get message</h4>
 <p>你可以在介面上試著推送(Publish)訊息，再取出(Get)訊息，你將依序地得到這些訊息。
-<figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues-io.png" title="RabbitMQ Web UI - Login" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues-io.png" data-sub-html="<h2>RabbitMQ Web UI - Login</h2><p>RabbitMQ Web UI - Login</p>">
+<figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues-io.png" title="Publish / Get message" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues-io.png" data-sub-html="<h2>Publish / Get message</h2><p>Publish / Get message</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -459,10 +459,10 @@ docker-compose -f docker-compose.yml up
             data-srcset="/rabbitmq-management-interface/rabbitmq-ui-queues-io.png, rabbitmq-ui-queues-io.png 1.5x, /rabbitmq-management-interface/rabbitmq-ui-queues-io.png 2x"
             data-sizes="auto"
             alt="/rabbitmq-management-interface/rabbitmq-ui-queues-io.png" />
-    </a><figcaption class="image-caption">RabbitMQ Web UI - Login</figcaption>
+    </a><figcaption class="image-caption">Publish / Get message</figcaption>
     </figure></p>
 <p>測試的同時你可觀察訊息圖表的即時變化。（網頁預設 Refresh every 5 seconds）
-<figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues-view.png" title="RabbitMQ Web UI - Login" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues-view.png" data-sub-html="<h2>RabbitMQ Web UI - Login</h2><p>RabbitMQ Web UI - Login</p>">
+<figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-queues-view.png" title="Queue Overview" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-queues-view.png" data-sub-html="<h2>Queue Overview</h2><p>Queue Overview</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -470,11 +470,11 @@ docker-compose -f docker-compose.yml up
             data-srcset="/rabbitmq-management-interface/rabbitmq-ui-queues-view.png, rabbitmq-ui-queues-view.png 1.5x, /rabbitmq-management-interface/rabbitmq-ui-queues-view.png 2x"
             data-sizes="auto"
             alt="/rabbitmq-management-interface/rabbitmq-ui-queues-view.png" />
-    </a><figcaption class="image-caption">RabbitMQ Web UI - Login</figcaption>
+    </a><figcaption class="image-caption">Queue Overview</figcaption>
     </figure></p>
 <h3 id="admin">Admin</h3>
 <p>最初使用的 DEFAULT 帳密是最高權限使用者，若想把帳號分給其他人，可在這個頁面管理 Users 或新增 User。</p>
-<p><figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-users.png" title="RabbitMQ Web UI - Login" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-users.png" data-sub-html="<h2>RabbitMQ Web UI - Login</h2><p>RabbitMQ Web UI - Login</p>">
+<p><figure><a class="lightgallery" href="/rabbitmq-management-interface/rabbitmq-ui-users.png" title="RabbitMQ Web UI - Admin" data-thumbnail="/rabbitmq-management-interface/rabbitmq-ui-users.png" data-sub-html="<h2>RabbitMQ Web UI - Admin</h2><p>RabbitMQ Web UI - Admin</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -482,7 +482,7 @@ docker-compose -f docker-compose.yml up
             data-srcset="/rabbitmq-management-interface/rabbitmq-ui-users.png, rabbitmq-ui-users.png 1.5x, /rabbitmq-management-interface/rabbitmq-ui-users.png 2x"
             data-sizes="auto"
             alt="/rabbitmq-management-interface/rabbitmq-ui-users.png" />
-    </a><figcaption class="image-caption">RabbitMQ Web UI - Login</figcaption>
+    </a><figcaption class="image-caption">RabbitMQ Web UI - Admin</figcaption>
     </figure></p>
 <h2 id="參考">參考</h2>
 <p><a href="https://www.rabbitmq.com/queues.html" target="_blank" rel="noopener noreffer">https://www.rabbitmq.com/queues.html</a></p>
