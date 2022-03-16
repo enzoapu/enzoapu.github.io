@@ -33,7 +33,7 @@ docker run --rm --name rabbitmq -p 5672:5672 -p 15672:15672 \
 | `--name rabbitmq` |  將容器命名為 rabbitmq |
 | `-p 5672:5672` | 將本機端的 `5672` port 關聯到容器的 `5672` port（RabbitMQ） |
 | `-p 15672:15672` | 將本機端的 `15672` port 關聯到容器的 `15672` port（Web UI） |
-| <div style="width: 200pt">`-e RABBITMQ_DEFAULT_USER=root`</div> | 宣告環境變數，連線到 RabbitMQ 的 `username` |
+| `-e RABBITMQ_DEFAULT_USER=root` | 宣告環境變數，連線到 RabbitMQ 的 `username` |
 | `-e RABBITMQ_DEFAULT_PASS=1234` |  宣告環境變數，連線到 RabbitMQ 的 `password` |
 | `rabbitmq:management` | 指定容器抓 Docker Hub 上的 RabbitMQ [Official Omage](https://registry.hub.docker.com/_/rabbitmq/) |
  
