@@ -25,4 +25,4 @@
 
 <br><br>
 
-![https://pydata.org/taipei2020/program/talk-14/](/images/avatar.png "PyData Taipei 2020")
+![https://pydata.org/taipei2020/program/talk-14/](/images/enzo.png "PyData Taipei 2020")
