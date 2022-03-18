@@ -8,8 +8,8 @@
 <br>
 
 **[ 系列文章目錄 ]**
-1. [[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用](/message-queue/)
-2. [[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式](/rabbitmq-intro/)
+1. [[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用](/message-queue-introduction/)
+2. [[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式](/rabbitmq-intro-introduction/)
 3. [[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面](/rabbitmq-management-interface/)（本篇）
 4. *[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例（待完成）*
 
