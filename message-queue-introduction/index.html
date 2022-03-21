@@ -39,7 +39,12 @@
                         }],"genre": "posts","keywords": "message-queue, system-design, architecture","wordcount":  211 ,
         "url": "https:\/\/enzochang.com\/message-queue-introduction\/","datePublished": "2022-03-03T20:00:00+08:00","dateModified": "2022-03-03T20:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
-            "name": "xxxx","logo": "https:\/\/enzochang.com\/images\/avatar.png"},"author": {
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/enzochang.com\/images\/avatar\/i4.png",
+                    "width":  421 ,
+                    "height":  421 
+                }},"author": {
                 "@type": "Person",
                 "name": "Enzo Chang"
             },"description": "這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 \u0026 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"
@@ -169,12 +174,10 @@
 <p><strong>[ 系列文章目錄 ]</strong></p>
 <ol>
 <li><a href="/message-queue-introduction/" rel="">[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</a>（本篇）</li>
-<li><a href="/rabbitmq-intro-introduction/" rel="">[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式</a></li>
+<li><a href="/rabbitmq-introduction/" rel="">[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式</a></li>
 <li><a href="/rabbitmq-management-interface/" rel="">[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面</a></li>
-<li><em>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例（待完成）</em></li>
+<li><a href="/rabbitmq-python-example/" rel="">[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例</a></li>
 </ol>
-<!-- 2. [[DATA] 訊息佇列 02 - RabbitMQ 設計模式與管理介面](/rabbitmq-intro/)
-3. [[DATA] 訊息佇列 03 - RabbitMQ x Python 實作範例](/rabbitmq-python/) -->
 <h2 id="什麼是-message-queuemq">什麼是 Message Queue(MQ)？</h2>
 <br>
 <figure><a class="lightgallery" href="/message-queue-introduction/mq_single.png" title="Message Queue" data-thumbnail="/message-queue-introduction/mq_single.png" data-sub-html="<h2>Message Queue</h2>">
