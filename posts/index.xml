@@ -4,7 +4,14 @@
         <link>https://enzochang.com/posts/</link>
         <description>All Posts | 恩佐思維</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 15 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 22 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例</title>
+    <link>https://enzochang.com/rabbitmq-python-example/</link>
+    <pubDate>Tue, 22 Mar 2022 22:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://enzochang.com/rabbitmq-python-example/</guid>
+    <description><![CDATA[上一篇我們已經把 RabbitMQ 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 與 RabbitMQ 建立連線，撰寫 Producer 和 Consumer 程式，實作 Simple & Worker 設計模式。]]></description>
+</item><item>
     <title>[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面</title>
     <link>https://enzochang.com/rabbitmq-management-interface/</link>
     <pubDate>Tue, 15 Mar 2022 22:00:00 &#43;0800</pubDate>
