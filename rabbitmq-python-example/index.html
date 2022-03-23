@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta content="RabbitMQ Python, RabbitMQ 實作, RabbitMQ Python 實作, RabbitMQ 教學" name="keywords">
         <meta name="google-site-verification" content="C0V2SROPoRYz0zPWpfXKWVffXgbrLJR-yxL0pmdVip8" />
-        <title>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例 - 恩佐思維</title><meta name="Description" content="上一篇我們已經把 RabbitMQ 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 與 RabbitMQ 建立連線，撰寫 Producer 和 Consumer 程式，實作 Simple &amp; Worker 設計模式。"><meta property="og:title" content="[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例" />
-<meta property="og:description" content="上一篇我們已經把 RabbitMQ 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 與 RabbitMQ 建立連線，撰寫 Producer 和 Consumer 程式，實作 Simple &amp; Worker 設計模式。" />
+        <title>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例 - 恩佐思維</title><meta name="Description" content="上一篇文章我們已經把 RabbitMQ Server 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 的 Library - Pika 與 RabbitMQ 進行互動，撰寫 Client 端的 Producer 和 Consumer 程式碼。"><meta property="og:title" content="[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例" />
+<meta property="og:description" content="上一篇文章我們已經把 RabbitMQ Server 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 的 Library - Pika 與 RabbitMQ 進行互動，撰寫 Client 端的 Producer 和 Consumer 程式碼。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://enzochang.com/rabbitmq-python-example/" /><meta property="og:image" content="https://enzochang.com/images/enzo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-22T22:00:00+08:00" />
@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://enzochang.com/images/enzo.png"/>
 
 <meta name="twitter:title" content="[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例"/>
-<meta name="twitter:description" content="上一篇我們已經把 RabbitMQ 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 與 RabbitMQ 建立連線，撰寫 Producer 和 Consumer 程式，實作 Simple &amp; Worker 設計模式。"/>
+<meta name="twitter:description" content="上一篇文章我們已經把 RabbitMQ Server 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 的 Library - Pika 與 RabbitMQ 進行互動，撰寫 Client 端的 Producer 和 Consumer 程式碼。"/>
 <meta name="application-name" content="Enzo Thinking">
 <meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -36,7 +36,7 @@
                             "url": "https:\/\/enzochang.com\/images\/enzo.png",
                             "width":  883 ,
                             "height":  883 
-                        }],"genre": "posts","keywords": "rabbitmq, python, pika","wordcount":  498 ,
+                        }],"genre": "posts","keywords": "rabbitmq, python, pika","wordcount":  650 ,
         "url": "https:\/\/enzochang.com\/rabbitmq-python-example\/","datePublished": "2022-03-22T22:00:00+08:00","dateModified": "2022-03-22T22:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -47,7 +47,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Enzo Chang"
-            },"description": "上一篇我們已經把 RabbitMQ 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 與 RabbitMQ 建立連線，撰寫 Producer 和 Consumer 程式，實作 Simple \u0026 Worker 設計模式。"
+            },"description": "上一篇文章我們已經把 RabbitMQ Server 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 的 Library - Pika 與 RabbitMQ 進行互動，撰寫 Client 端的 Producer 和 Consumer 程式碼。"
     }
     </script>
             
@@ -143,8 +143,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-22">2022-03-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;498 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-22">2022-03-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;650 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -154,7 +154,7 @@
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#rabbitmq-clients--server">RabbitMQ Clients &amp; Server</a></li>
-    <li><a href="#rabbitmq-client-library---pika">RabbitMQ Client Library - pika</a>
+    <li><a href="#rabbitmq-client-library-python---pika">RabbitMQ Client Library (Python) - Pika</a>
       <ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -169,7 +169,12 @@
                 <li><a href="#3-using-channelconsume-generator-to-consume-messages">3. Using channel.consume() generator to consume messages</a></li>
               </ul>
             </li>
-            <li><a href="#完整程式碼">完整程式碼</a></li>
+            <li><a href="#完整程式碼">完整程式碼</a>
+              <ul>
+                <li><a href="#producerpy"><code>producer.py</code></a></li>
+                <li><a href="#consumerpy"><code>consumer.py</code></a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -179,7 +184,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>上一篇我們已經把 RabbitMQ 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和訊息 Publish / Get，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 與 RabbitMQ 建立連線，撰寫 Producer 和 Consumer 程式，實作 Simple &amp; Worker 設計模式。</p>
+<p>上一篇文章我們已經把 RabbitMQ Server 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 的 Library - Pika 與 RabbitMQ 進行互動，撰寫 Client 端的 Producer 和 Consumer 程式碼。</p>
 <br>
 <p><strong>[ 系列文章目錄 ]</strong></p>
 <ol>
@@ -189,7 +194,7 @@
 <li><a href="/rabbitmq-python-example/" rel="">[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例</a>（本篇）</li>
 </ol>
 <h2 id="rabbitmq-clients--server">RabbitMQ Clients &amp; Server</h2>
-<p>上一篇文章我們透過 Docker 運行 RabbitMQ Server，也就是 Producer - Broker - Consumer 架構中的 Broker；現在我們要來實作 RabbitMQ Clients，包含推送訊息的 Producer 和消化訊息的 Consumer。</p>
+<p>上一篇我們透過 Docker 來運行 <strong>RabbitMQ Server</strong>，也就是 Producer - Broker - Consumer 架構中的 Broker；現在我們要來實作 <strong>RabbitMQ Clients</strong>，包含推送訊息的 Producer 和消化訊息的 Consumer。</p>
 <!-- ![RabbitMQ Clients and Server](rabbitmq-client-server.png "RabbitMQ Clients and Server") -->
 <figure><a class="lightgallery" href="/rabbitmq-python-example/rabbitmq-client-server.png" title="RabbitMQ Clients and Server" data-thumbnail="/rabbitmq-python-example/rabbitmq-client-server.png" data-sub-html="<h2>RabbitMQ Clients and Server</h2>">
         <img
@@ -201,31 +206,31 @@
             alt="RabbitMQ Clients and Server" width="100%" />
     </a><figcaption class="image-caption">RabbitMQ Clients and Server</figcaption>
     </figure>
-<p>RabbitMQ Clients 有許多官方支持的 <a href="https://www.rabbitmq.com/devtools.html" target="_blank" rel="noopener noreffer">Libraries and Develoer Tools</a>，可根據你熟悉的程式語言做選擇，本文將使用 pure-Python 的 Library - Pika</p>
-<h2 id="rabbitmq-client-library---pika">RabbitMQ Client Library - pika</h2>
+<p>RabbitMQ Clients 有許多官方支持的 <a href="https://www.rabbitmq.com/devtools.html" target="_blank" rel="noopener noreffer">Libraries and Develoer Tools</a>，可根據你熟悉的程式語言做選擇，本文將使用 pure-Python 的 Library: <strong>Pika</strong></p>
+<h2 id="rabbitmq-client-library-python---pika">RabbitMQ Client Library (Python) - Pika</h2>
 <h3 id="introduction">Introduction</h3>
-<p>Pika is a RabbitMQ client library for Python. [ <a href="https://pika.readthedocs.io/" target="_blank" rel="noopener noreffer">source code</a> ] [ <a href="https://github.com/pika/pika/" target="_blank" rel="noopener noreffer">document</a> ]</p>
+<p>Pika 是一個純 Python 開發的 RabbitMQ 函式庫 [ <a href="https://pika.readthedocs.io/" target="_blank" rel="noopener noreffer">source code</a> ] [ <a href="https://github.com/pika/pika/" target="_blank" rel="noopener noreffer">document</a> ]</p>
 <ul>
-<li>AMQP 0-9-1 protocol</li>
-<li>Python 2.7 and 3.4+ are supported</li>
+<li>使用 AMQP 0-9-1 protocol</li>
+<li>支援 Python 2.7 and 3.4+ 版</li>
 </ul>
 <h3 id="installation">Installation</h3>
-<p>使用 PyPI 安裝 <code>pika</code></p>
+<p>使用 PyPI 就可以簡單安裝 Pika。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install pika
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pip install pika
 </code></pre></td></tr></table>
 </div>
 </div><div class="details admonition info open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw"></i>Asynchronous Pika<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-info-circle fa-fw"></i>Asynchronous pika<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p><code>aio-pika</code> 是使用 asyncio 的異步(Asynchronous)版函式庫 [ <a href="https://github.com/mosquito/aio-pika" target="_blank" rel="noopener noreffer">source code</a> ] [ <a href="https://aio-pika.readthedocs.io/en/latest/" target="_blank" rel="noopener noreffer">document</a> ]</p>
-<p>PyPI 安裝：<code>pip install aio-pika</code></p>
+            <div class="admonition-content"><p><code>aio-pika</code> 是使用 asyncio 的異步(Asynchronous)版的 RabbitMQ 函式庫 [ <a href="https://github.com/mosquito/aio-pika" target="_blank" rel="noopener noreffer">source code</a> ] [ <a href="https://aio-pika.readthedocs.io/en/latest/" target="_blank" rel="noopener noreffer">document</a> ]</p>
+<p>同樣使用 PyPI 安裝：<code>pip install aio-pika</code></p>
 </div>
         </div>
     </div>
@@ -268,7 +273,7 @@
     </div>
 <h4 id="生產者producer">生產者(Producer)</h4>
 <p>首先宣告名稱為 <code>hello</code> 的 Queue（若不存在則會創建），接著對 Queue 發佈一則訊息 <code>Hello World!</code>，最後記得要關閉(close)連線。</p>
-<p>在 RabbitMQ 中，訊息不能直接發送到 Queue，而是必須經過一個 Exchange，本範例使用空字串 <code>exchange</code>，並使用與 Queue 名稱相同的 <code>routing_key</code> 綁定。</p>
+<p>在 RabbitMQ 中，訊息不能直接發送到 Queue，而必須經過一個 Exchange，本範例使用空字串 <code>exchange</code>，並使用與 Queue 名稱相同的 <code>routing_key</code> 綁定。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -297,10 +302,9 @@
 <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><a href="" rel="">terminal</a></p>
-<h4 id="消費者consumer">消費者(Consumer)</h4>
-<p>首先同樣是宣告名稱為 <code>hello</code> 的 Queue（必須與 Producer 的相同），接著從 Queue 裡取出訊息，確認訊息處理完要 ack，告知 Queue 可拋棄訊息；反之，訊息處理不如預期要 nack，訊息將再次回到 Queue。</p>
-<div class="details admonition info open">
+</div><h4 id="消費者consumer">消費者(Consumer)</h4>
+<p>首先同樣是宣告名稱為 <code>hello</code> 的 Queue（必須與 Producer 的相同），接著從 Queue 裡取出訊息，確認訊息處理完要 <code>ack</code>，告知 Queue 可拋棄訊息；反之，訊息處理不如預期要 <code>nack</code>，訊息將再次回到 Queue。</p>
+<p><div class="details admonition info open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-info-circle fa-fw"></i>訊息確認機制<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
@@ -310,11 +314,12 @@
 <li><code>channel.basic_ack(method.delivery_tag)</code> 用於<strong>肯定確認</strong></li>
 <li><code>channel.basic_nack(method.delivery_tag)</code> 用於<strong>否定確認</strong></li>
 </ul>
-<p>另外 consume 訊息的方法中，可以帶 <code>auto_ack=True</code> 參數，意即訊息取出後就自動<strong>肯定確認</strong>。</p>
+<p>另外 consume 訊息的方法中，可以帶 <code>auto_ack=True</code> 參數，意即訊息取出後就<strong>自動肯定確認</strong>。</p>
 <p>更多詳細介紹可參考這篇：<a href="https://www.rabbitmq.com/confirms.html" target="_blank" rel="noopener noreffer">Consumer Acknowledgements and Publisher Confirms</a></p>
 </div>
         </div>
     </div>
+<br></p>
 <p>Pika 提供三種從 RabbitMQ Broker 消費(consume)訊息的方法：</p>
 <h5 id="1-using-channelbasic_get-to-consume-a-message">1. Using channel.basic_get() to consume a message</h5>
 <p>使用 <code>basic_get()</code> 方法，每次取出一則訊息，需要開發者手動調用。</p>
@@ -334,7 +339,7 @@
 
 <span class="n">channel</span><span class="o">.</span><span class="n">basic_get</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">auto_ack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">method</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">body</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="n">basic_get</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">auto_ack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34; [x] Received </span><span class="si">%r</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">body</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34; [x] Received </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 <span class="c1"># channel.basic_ack(method.delivery_tag)</span>
 
 <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -370,7 +375,7 @@
 
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">body</span><span class="p">):</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34; [x] Received </span><span class="si">%r</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">body</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34; [x] Received </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
     <span class="c1"># channel.basic_ack(method.delivery_tag)</span>
 
 <span class="n">channel</span><span class="o">.</span><span class="n">basic_consume</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span>
@@ -410,7 +415,7 @@
 
 <span class="k">for</span> <span class="n">method</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">body</span> <span class="ow">in</span> <span class="n">channel</span><span class="o">.</span><span class="n">consume</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">auto_ack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inactivity_timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34; [x] Received </span><span class="si">%r</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">body</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34; [x] Received </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
     <span class="c1"># channel.basic_ack(method.delivery_tag)</span>
 
     <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">properties</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">body</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
@@ -425,26 +430,126 @@
 <!-- do something
 sleep -->
 <h4 id="完整程式碼">完整程式碼</h4>
-<p>producer.py</p>
+<h5 id="producerpy"><code>producer.py</code></h5>
+<p>Producer 發佈 100 則訊息（字串 0 ~ 99）至名稱叫 <code>hello</code> 的 Queue。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 待補</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pika</span>
+
+
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">PlainCredentials</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">ConnectionParameters</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+                                       <span class="n">port</span><span class="o">=</span><span class="mi">5672</span><span class="p">,</span>
+                                       <span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
+
+<span class="n">channel</span><span class="o">.</span><span class="n">queue_declare</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">channel</span><span class="o">.</span><span class="n">basic_publish</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> 
+                          <span class="n">routing_key</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> 
+                          <span class="n">body</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34; [x] Sent &#39;</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">)</span>
+
+<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>consumer.py</p>
+</div><h5 id="consumerpy"><code>consumer.py</code></h5>
+<p>Consumer 從 Queue 裡取出訊息，每次取出一筆，在 callback function 打印出內容。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 待補</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pika</span>
+
+
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">PlainCredentials</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">ConnectionParameters</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+                                       <span class="n">port</span><span class="o">=</span><span class="mi">5672</span><span class="p">,</span>
+                                       <span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">pika</span><span class="o">.</span><span class="n">BlockingConnection</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
+
+<span class="n">channel</span><span class="o">.</span><span class="n">queue_declare</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">body</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34; [x] Received </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+    <span class="c1"># channel.basic_ack(method.delivery_tag)</span>
+
+<span class="n">channel</span><span class="o">.</span><span class="n">basic_consume</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span>
+                      <span class="n">auto_ack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">on_message_callback</span><span class="o">=</span><span class="n">callback</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; [*] Waiting for messages. To exit press CTRL+C&#39;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">channel</span><span class="o">.</span><span class="n">start_consuming</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">channel</span><span class="o">.</span><span class="n">stop_consuming</span><span class="p">()</span>
+
+<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="系列文總結">系列文總結</h2>
-<p># 待補</p>
+<p>訊息佇列系列文終於寫完了，從介紹 Message Queue 是什麼開始，接著進入 RabbirMQ 簡介與設計模式，再到 RabbirMQ 架設和 Web UI 介紹，最後這篇是撰寫 Python 程式實作範例，其實還想補充更多我在專案中用到的一些技巧，不過就先放在心上吧～</p>
+<br>
+<p>讀者若有其他想知道的部分，或是實作上遇到的問題，可以在底下留言或聯繫告訴我！</p>
+<br>
+<p><strong>本系列完結。</strong></p>
 <h2 id="參考">參考</h2>
 <p><a href="https://pika.readthedocs.io/en/stable/modules/index.html" target="_blank" rel="noopener noreffer">https://pika.readthedocs.io/en/stable/modules/index.html</a></p>
 <p><a href="https://pika.readthedocs.io/en/stable/examples.html" target="_blank" rel="noopener noreffer">https://pika.readthedocs.io/en/stable/examples.html</a></p></div><div class="post-footer" id="post-footer">

@@ -3,7 +3,7 @@
 <!--more-->
 
 ## 前言
-上一篇我們已經把 RabbitMQ 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和訊息 Publish / Get，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 與 RabbitMQ 建立連線，撰寫 Producer 和 Consumer 程式，實作 Simple & Worker 設計模式。
+上一篇文章我們已經把 RabbitMQ Server 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 的 Library - Pika 與 RabbitMQ 進行互動，撰寫 Client 端的 Producer 和 Consumer 程式碼。
 
 <br>
 
@@ -14,35 +14,35 @@
 4. [[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例](/rabbitmq-python-example/)（本篇）
 
 ## RabbitMQ Clients & Server
-上一篇文章我們透過 Docker 運行 RabbitMQ Server，也就是 Producer - Broker - Consumer 架構中的 Broker；現在我們要來實作 RabbitMQ Clients，包含推送訊息的 Producer 和消化訊息的 Consumer。
+上一篇我們透過 Docker 來運行 **RabbitMQ Server**，也就是 Producer - Broker - Consumer 架構中的 Broker；現在我們要來實作 **RabbitMQ Clients**，包含推送訊息的 Producer 和消化訊息的 Consumer。
 
 <!-- ![RabbitMQ Clients and Server](rabbitmq-client-server.png "RabbitMQ Clients and Server") -->
 {{< image alt="RabbitMQ Clients and Server" src="rabbitmq-client-server.png" caption="RabbitMQ Clients and Server" height="" width="100%">}}
 
-RabbitMQ Clients 有許多官方支持的 [Libraries and Develoer Tools](https://www.rabbitmq.com/devtools.html)，可根據你熟悉的程式語言做選擇，本文將使用 pure-Python 的 Library - Pika
+RabbitMQ Clients 有許多官方支持的 [Libraries and Develoer Tools](https://www.rabbitmq.com/devtools.html)，可根據你熟悉的程式語言做選擇，本文將使用 pure-Python 的 Library: **Pika**
 
 
-## RabbitMQ Client Library - pika
+## RabbitMQ Client Library (Python) - Pika
 
 ### Introduction
-Pika is a RabbitMQ client library for Python. [ [source code](https://pika.readthedocs.io/) ] [ [document](https://github.com/pika/pika/) ]
-- AMQP 0-9-1 protocol
-- Python 2.7 and 3.4+ are supported
+Pika 是一個純 Python 開發的 RabbitMQ 函式庫 [ [source code](https://pika.readthedocs.io/) ] [ [document](https://github.com/pika/pika/) ]
+- 使用 AMQP 0-9-1 protocol
+- 支援 Python 2.7 and 3.4+ 版
 
 
 ### Installation
 
-使用 PyPI 安裝 `pika`
+使用 PyPI 就可以簡單安裝 Pika。
 
-```
+```bash
 pip install pika
 ```
 
-{{< admonition type=info title="Asynchronous Pika" open=true >}}
+{{< admonition type=info title="Asynchronous pika" open=true >}}
 
-`aio-pika` 是使用 asyncio 的異步(Asynchronous)版函式庫 [ [source code](https://github.com/mosquito/aio-pika) ] [ [document](https://aio-pika.readthedocs.io/en/latest/) ]
+`aio-pika` 是使用 asyncio 的異步(Asynchronous)版的 RabbitMQ 函式庫 [ [source code](https://github.com/mosquito/aio-pika) ] [ [document](https://aio-pika.readthedocs.io/en/latest/) ]
 
-PyPI 安裝：`pip install aio-pika`
+同樣使用 PyPI 安裝：`pip install aio-pika`
 
 {{</admonition>}}
 
@@ -80,7 +80,7 @@ Connection 是應用程式與 Broker 的真實 TCP 連接，Channel 則是其中
 
 首先宣告名稱為 `hello` 的 Queue（若不存在則會創建），接著對 Queue 發佈一則訊息 `Hello World!`，最後記得要關閉(close)連線。
 
-在 RabbitMQ 中，訊息不能直接發送到 Queue，而是必須經過一個 Exchange，本範例使用空字串 `exchange`，並使用與 Queue 名稱相同的 `routing_key` 綁定。
+在 RabbitMQ 中，訊息不能直接發送到 Queue，而必須經過一個 Exchange，本範例使用空字串 `exchange`，並使用與 Queue 名稱相同的 `routing_key` 綁定。
 
 ```python
 channel.queue_declare(queue='hello')
@@ -97,12 +97,9 @@ connection.close()
 ```
 
 
-[terminal]()
-
-
 #### 消費者(Consumer)
 
-首先同樣是宣告名稱為 `hello` 的 Queue（必須與 Producer 的相同），接著從 Queue 裡取出訊息，確認訊息處理完要 ack，告知 Queue 可拋棄訊息；反之，訊息處理不如預期要 nack，訊息將再次回到 Queue。
+首先同樣是宣告名稱為 `hello` 的 Queue（必須與 Producer 的相同），接著從 Queue 裡取出訊息，確認訊息處理完要 `ack`，告知 Queue 可拋棄訊息；反之，訊息處理不如預期要 `nack`，訊息將再次回到 Queue。
 
 {{< admonition type=info title="訊息確認機制" open=true >}}
 
@@ -110,12 +107,12 @@ Acknowledgements 是一種用於傳遞和處理確認的機制，當 RabbitMQ �
 - `channel.basic_ack(method.delivery_tag)` 用於**肯定確認**
 - `channel.basic_nack(method.delivery_tag)` 用於**否定確認**
 
-另外 consume 訊息的方法中，可以帶 `auto_ack=True` 參數，意即訊息取出後就自動**肯定確認**。
+另外 consume 訊息的方法中，可以帶 `auto_ack=True` 參數，意即訊息取出後就**自動肯定確認**。
 
 更多詳細介紹可參考這篇：[Consumer Acknowledgements and Publisher Confirms](https://www.rabbitmq.com/confirms.html)
 
 {{</admonition>}}
-
+<br>
 
 Pika 提供三種從 RabbitMQ Broker 消費(consume)訊息的方法：
 
@@ -128,7 +125,7 @@ channel.queue_declare(queue='hello')
 
 channel.basic_get(queue='hello', auto_ack=True)
 method, properties, body = channel.basic_get(queue='hello', auto_ack=True)
-print(" [x] Received %r" % body)
+print(f" [x] Received {body.decode()}")
 # channel.basic_ack(method.delivery_tag)
 
 connection.close()
@@ -144,7 +141,7 @@ channel.queue_declare(queue='hello')
 
 def callback(ch, method, properties, body):
 
-    print(" [x] Received %r" % body)
+    print(f" [x] Received {body.decode()}")
     # channel.basic_ack(method.delivery_tag)
 
 channel.basic_consume(queue='hello',
@@ -161,6 +158,7 @@ except KeyboardInterrupt:
 
 connection.close()
 ```
+
 <!-- [terminal]() -->
 
 ##### 3. Using channel.consume() generator to consume messages
@@ -172,7 +170,7 @@ channel.queue_declare(queue='hello')
 
 for method, properties, body in channel.consume(queue='hello', auto_ack=True, inactivity_timeout=10):
 
-    print(" [x] Received %r" % body)
+    print(f" [x] Received {body.decode()}")
     # channel.basic_ack(method.delivery_tag)
 
     if method == None and properties == None and body == None:
@@ -189,17 +187,79 @@ connection.close()
 sleep -->
 
 #### 完整程式碼
-producer.py
+##### `producer.py`
+
+Producer 發佈 100 則訊息（字串 0 ~ 99）至名稱叫 `hello` 的 Queue。
+
 ```python
-# 待補
+import pika
+
+
+credentials = pika.PlainCredentials('root', '1234')
+parameters = pika.ConnectionParameters(host='localhost',
+                                       port=5672,
+                                       credentials=credentials)
+connection = pika.BlockingConnection(parameters)
+channel = connection.channel()
+
+channel.queue_declare(queue='hello')
+
+for i in range(100):
+    msg = str(i)
+    channel.basic_publish(exchange='', 
+                          routing_key='hello', 
+                          body=msg)
+    print(f" [x] Sent '{msg}'")
+
+connection.close()
 ```
-consumer.py
+
+##### `consumer.py`
+
+Consumer 從 Queue 裡取出訊息，每次取出一筆，在 callback function 打印出內容。
+
 ```python
-# 待補
+import pika
+
+
+credentials = pika.PlainCredentials('root', '1234')
+parameters = pika.ConnectionParameters(host='localhost',
+                                       port=5672,
+                                       credentials=credentials)
+connection = pika.BlockingConnection(parameters)
+channel = connection.channel()
+
+channel.queue_declare(queue='hello')
+
+def callback(ch, method, properties, body):
+
+    print(f" [x] Received {body.decode()}")
+    # channel.basic_ack(method.delivery_tag)
+
+channel.basic_consume(queue='hello',
+                      auto_ack=True,
+                      on_message_callback=callback)
+
+print(' [*] Waiting for messages. To exit press CTRL+C')
+
+try:
+    channel.start_consuming()
+except KeyboardInterrupt:
+    channel.stop_consuming()
+
+connection.close()
 ```
 
 ## 系列文總結
-\# 待補
+訊息佇列系列文終於寫完了，從介紹 Message Queue 是什麼開始，接著進入 RabbirMQ 簡介與設計模式，再到 RabbirMQ 架設和 Web UI 介紹，最後這篇是撰寫 Python 程式實作範例，其實還想補充更多我在專案中用到的一些技巧，不過就先放在心上吧～
+
+<br>
+
+讀者若有其他想知道的部分，或是實作上遇到的問題，可以在底下留言或聯繫告訴我！
+
+<br>
+
+**本系列完結。**
 
 ## 參考
 https://pika.readthedocs.io/en/stable/modules/index.html
