@@ -4,7 +4,16 @@
         <link>https://enzochang.com/posts/</link>
         <description>All Posts | 恩佐思維</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 22 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 Apr 2022 19:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>[CAREER] 為什麼你應該投稿成為社群/研討會講者？</title>
+    <link>https://enzochang.com/why-you-should-be-a-conference-speaker/</link>
+    <pubDate>Sun, 10 Apr 2022 19:00:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://enzochang.com/why-you-should-be-a-conference-speaker/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/conference-speaker.jpg" referrerpolicy="no-referrer">
+            </div>最近在和幾位同事討(推)論(坑)要不要投稿今年的 PyCon APAC，發現大家普遍都缺乏動機（不知道為何要投）或是有點畏懼（沒自信能當講者），不過在我看來，投稿和當講者都是一件 C/P 值很高的事！本篇文章將介紹當講者的好處、一些重要的心態，以及任何人都可以展開行動的方法～]]></description>
+</item><item>
     <title>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例</title>
     <link>https://enzochang.com/rabbitmq-python-example/</link>
     <pubDate>Tue, 22 Mar 2022 22:00:00 &#43;0800</pubDate>
