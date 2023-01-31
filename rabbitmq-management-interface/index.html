@@ -13,7 +13,6 @@
 <meta property="og:url" content="https://enzochang.com/rabbitmq-management-interface/" /><meta property="og:image" content="https://enzochang.com/images/enzo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-15T22:00:00+08:00" />
 <meta property="article:modified_time" content="2022-03-29T15:01:12+08:00" />
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://enzochang.com/images/enzo.png"/>
 
@@ -36,7 +35,7 @@
                             "url": "https:\/\/enzochang.com\/images\/enzo.png",
                             "width":  883 ,
                             "height":  883 
-                        }],"genre": "posts","keywords": "rabbitmq, web-user-interface, docker","wordcount":  508 ,
+                        }],"genre": "posts","keywords": "rabbitmq, web-user-interface, docker","wordcount":  433 ,
         "url": "https:\/\/enzochang.com\/rabbitmq-management-interface\/","datePublished": "2022-03-15T22:00:00+08:00","dateModified": "2022-03-29T15:01:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -143,7 +142,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;508 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;433 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -199,10 +198,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># create and start container</span>
-docker run --rm --name rabbitmq -p 5672:5672 -p 15672:15672 <span class="se">\
-</span><span class="se"></span>-e <span class="nv">RABBITMQ_DEFAULT_USER</span><span class="o">=</span>root -e <span class="nv">RABBITMQ_DEFAULT_PASS</span><span class="o">=</span><span class="m">1234</span> rabbitmq:management 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># create and start container</span>
+</span></span><span class="line"><span class="cl">docker run --rm --name rabbitmq -p 5672:5672 -p 15672:15672 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e <span class="nv">RABBITMQ_DEFAULT_USER</span><span class="o">=</span>root -e <span class="nv">RABBITMQ_DEFAULT_PASS</span><span class="o">=</span><span class="m">1234</span> rabbitmq:management 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><br>
 <table>
@@ -262,9 +261,9 @@ docker run --rm --name rabbitmq -p 5672:5672 -p 15672:15672 <span class="se">\
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># create and start container</span>
-docker-compose -f docker-compose.yml up
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># create and start container</span>
+</span></span><span class="line"><span class="cl">docker-compose -f docker-compose.yml up
+</span></span></code></pre></td></tr></table>
 </div>
 </div><br>
 <p><code>docker-compose.yml</code> 的參數定義與 Docker 指令完全一致。</p>
@@ -281,22 +280,20 @@ docker-compose -f docker-compose.yml up
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="c"># docker-compose.yml</span><span class="w">
-</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">rabbitmq</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">rabbitmq:management</span><span class="w">
-</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">rabbitmq</span><span class="w">
-</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="m">5672</span><span class="p">:</span><span class="m">5672</span><span class="w">
-</span><span class="w">        </span>- <span class="m">15672</span><span class="p">:</span><span class="m">15672</span><span class="w">
-</span><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="l">RABBITMQ_DEFAULT_USER=root</span><span class="w">
-</span><span class="w">        </span>- <span class="l">RABBITMQ_DEFAULT_PASS=1234</span><span class="w">
-</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># docker-compose.yml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">rabbitmq</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">rabbitmq:management</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">rabbitmq</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="m">5672</span><span class="p">:</span><span class="m">5672</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="m">15672</span><span class="p">:</span><span class="m">15672</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="l">RABBITMQ_DEFAULT_USER=root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="l">RABBITMQ_DEFAULT_PASS=1234</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="進入-rabbitmq">進入 RabbitMQ</h3>
 <p>將 RabbitMQ 啟動後，在瀏覽器 <a href="http://localhost:15672" target="_blank" rel="noopener noreffer">http://localhost:15672</a> 進入 RabbitMQ 網頁管理介面，如果能成功進入「登入頁面」，代表 RabbitMQ 已經成功在本機(localhost)架設起來了！</p>
@@ -522,8 +519,8 @@ docker-compose -f docker-compose.yml up
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/enzochang/" target="_blank">Enzo Chang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/enzochang/" target="_blank">Enzo Chang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

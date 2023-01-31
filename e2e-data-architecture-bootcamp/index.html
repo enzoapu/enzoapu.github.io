@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta content="ALPHA Camp 課程, ALPHA Camp RISE, 現代數據架構" name="keywords">
+        <meta name="google-site-verification" content="C0V2SROPoRYz0zPWpfXKWVffXgbrLJR-yxL0pmdVip8" />
+        <title>[COURSE] RISE - 設計 E2E 數據架構 學程心得 - 恩佐思維</title><meta name="Description" content="2022年底，我報名了 ALPHA Camp 推出的「設計 E2E 現代數據架構」學程（業界首見👀），六週的內容超出預期的豐富，認識了許多 Data 領域的超強導師和優秀同儕，用力地學習、死命地交流，獲得的知識、經驗、人脈和資源，實在很超值！這篇文章將透過回顧和反思來記錄這些時間的想法與收穫。"><meta property="og:title" content="[COURSE] RISE - 設計 E2E 數據架構 學程心得" />
+<meta property="og:description" content="2022年底，我報名了 ALPHA Camp 推出的「設計 E2E 現代數據架構」學程（業界首見👀），六週的內容超出預期的豐富，認識了許多 Data 領域的超強導師和優秀同儕，用力地學習、死命地交流，獲得的知識、經驗、人脈和資源，實在很超值！這篇文章將透過回顧和反思來記錄這些時間的想法與收穫。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://enzochang.com/e2e-data-architecture-bootcamp/" /><meta property="og:image" content="https://enzochang.com/images/enzo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-30T19:36:23+08:00" />
+<meta property="article:modified_time" content="2023-01-30T19:36:23+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://enzochang.com/images/enzo.png"/>
+
+<meta name="twitter:title" content="[COURSE] RISE - 設計 E2E 數據架構 學程心得"/>
+<meta name="twitter:description" content="2022年底，我報名了 ALPHA Camp 推出的「設計 E2E 現代數據架構」學程（業界首見👀），六週的內容超出預期的豐富，認識了許多 Data 領域的超強導師和優秀同儕，用力地學習、死命地交流，獲得的知識、經驗、人脈和資源，實在很超值！這篇文章將透過回顧和反思來記錄這些時間的想法與收穫。"/>
+<meta name="application-name" content="Enzo Thinking">
+<meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://enzochang.com/e2e-data-architecture-bootcamp/" /><link rel="prev" href="https://enzochang.com/why-you-should-be-a-conference-speaker/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[COURSE] RISE - 設計 E2E 數據架構 學程心得",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/enzochang.com\/e2e-data-architecture-bootcamp\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/enzochang.com\/images\/enzo.png",
+                            "width":  883 ,
+                            "height":  883 
+                        }],"genre": "posts","keywords": "course, bootcamp, data-architecture","wordcount":  243 ,
+        "url": "https:\/\/enzochang.com\/e2e-data-architecture-bootcamp\/","datePublished": "2023-01-30T19:36:23+08:00","dateModified": "2023-01-30T19:36:23+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/enzochang.com\/images\/avatar\/i4.png",
+                    "width":  421 ,
+                    "height":  421 
+                }},"author": {
+                "@type": "Person",
+                "name": "Enzo Chang"
+            },"description": "2022年底，我報名了 ALPHA Camp 推出的「設計 E2E 現代數據架構」學程（業界首見👀），六週的內容超出預期的豐富，認識了許多 Data 領域的超強導師和優秀同儕，用力地學習、死命地交流，獲得的知識、經驗、人脈和資源，實在很超值！這篇文章將透過回顧和反思來記錄這些時間的想法與收穫。"
+    }
+    </script>
+            
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S56LF74G2R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S56LF74G2R');
+</script>
+        
+    </head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="恩佐思維"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar/i4.png"
+        data-srcset="/images/avatar/i4.png, /images/avatar/i4.png 1.5x, /images/avatar/i4.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar/i4.png"
+        title="/images/avatar/i4.png" />恩佐思維</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> Home </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="恩佐思維"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar/i4.png"
+        data-srcset="/images/avatar/i4.png, /images/avatar/i4.png 1.5x, /images/avatar/i4.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar/i4.png"
+        title="/images/avatar/i4.png" />恩佐思維</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/" title="">Home</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">[COURSE] RISE - 設計 E2E 數據架構 學程心得</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/course/"><i class="far fa-folder fa-fw"></i>Course</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-01-30">2023-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;243 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="ac-rise.png"
+        data-srcset="/e2e-data-architecture-bootcamp/ac-rise.png, ac-rise.png 1.5x, /e2e-data-architecture-bootcamp/ac-rise.png 2x"
+        data-sizes="auto"
+        alt="/e2e-data-architecture-bootcamp/ac-rise.png"
+        title="2022年底，我報名了 ALPHA Camp 推出的「設計 E2E 現代數據架構」學程（業界首見👀），六週的內容超出預期的豐富，認識了許多 Data 領域的超強導師和優秀同儕，用力地學習、死命地交流，獲得的知識、經驗、人脈和資源，實在很超值！這篇文章將透過回顧和反思來記錄這些時間的想法與收穫。" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#當初為什麽想申請-rise參加這門學程">當初為什麽想申請 RISE、參加這門學程</a></li>
+    <li><a href="#關於-rise-的學習體驗或學程內容">關於 RISE 的學習體驗或學程內容</a></li>
+    <li><a href="#其中最讓我印象深刻的地方">其中最讓我印象深刻的地方</a></li>
+    <li><a href="#給有興趣申請-rise-的朋友一些建議">給有興趣申請 RISE 的朋友一些建議</a></li>
+    <li><a href="#總結">總結</a></li>
+    <li><a href="#參考">參考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>2022年底，我報名了 <a href="https://www.facebook.com/alphacamp.tw" target="_blank" rel="noopener noreffer">ALPHA Camp</a> 推出的「設計 E2E 現代數據架構」學程（業界首見👀），六週的內容超出預期的豐富，認識了許多 Data 領域的超強導師和優秀同儕，用力地學習、死命地交流，獲得的知識、經驗、人脈和資源，實在很超值！</p>
+<p>~~因為繳交心得作業的期限快到了，~~所以這篇文章將透過回顧和反思來記錄這些時間的想法與收穫。</p>
+<h2 id="當初為什麽想申請-rise參加這門學程">當初為什麽想申請 RISE、參加這門學程</h2>
+<p>當初是從 ALPHA Camp co-founder Youchi 的<a href="https://www.facebook.com/alphacamp.tw/posts/pfbid023VgjTruqFB8Q4DCgxvNtFK2uoXbMqCrntGk6m8tFt9kQG8wdYKan4kQFnbnAy1FLl" target="_blank" rel="noopener noreffer">臉書貼文</a>得知此計畫，看完 <a href="https://www.notion.so/535cb38c368a438aa268a5528dac54ae" target="_blank" rel="noopener noreffer">RISE</a> 跟 <a href="https://www.notion.so/c15b8a99e68a402cba1d623c7cdae290" target="_blank" rel="noopener noreffer">Early Riser</a> 介紹頁，當下就決定要報名了！</p>
+<p>學程主打的「教練陪跑式實戰營隊設計」、「用宏觀視角培養領導者思維」、「結交數據領域的優秀人脈」都非常吸引我，特別是第三點，從報名表填寫到第二階段面試就能知道，願意報名並錄取這個計畫的其他同學，都是在數據領域、積極且有實戰經驗的優秀同儕。這樣這不僅能學習到不同公司、不同產業所使用技術、架構、工具，課後的交流與人脈的連結更讓這裡形成一個高質量的社群，我相信對職涯發展來說幫助很大。</p>
+<h2 id="關於-rise-的學習體驗或學程內容">關於 RISE 的學習體驗或學程內容</h2>
+<p>這邊拿 <a href="https://www.notion.so/c15b8a99e68a402cba1d623c7cdae290" target="_blank" rel="noopener noreffer">Early Riser</a> 介紹頁的資訊跟大家分享，六週的主題軟硬皆具、非常精實！</p>
+<p>（推薦大家去內頁看看，AC寫得很精準，也很用心💪）</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>觀念建立：建立從商業到技術全局觀<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>Week 1</code>釐清商業組織需求：利用 impact mapping，介紹自己所屬的產業、組織部門結構。</li>
+<li><code>Week 2</code>釐清 tech stack：透過產業案例認識數據產業三大類型，並拆解自身團隊 data flow &amp; tech stack。</li>
+<li><code>Week 3</code>發想小組 Use Case：透過「需求分析框架與範例」與小組共同定義下階段須拆解的 use case。</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>落地解決：針對需求提出解決方案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>Week 4</code>前期規劃：小組定義 data journey，進行可行性驗證，並規劃專案的時程與 milestones。</li>
+<li><code>Week 5</code>中期評估：小組拆解 user stories 並嘗試估算開發及維運成本，列出潛在風險。</li>
+<li><code>Week 6</code>規格提案：小組提出從系統設計，到物件、資料表設計的完整規格書。</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p>課程進行方式並非老師單向授課的形式，而是<strong>讓大家自己預習課程內容，再來到課堂上透過提問、討論和實作來學習</strong>，大致可以區分為：</p>
+<p><strong>課前</strong></p>
+<ol>
+<li>閱讀導師為大家精選的文章閱讀</li>
+<li>完成當週主題相關的作業個人/小組作業</li>
+</ol>
+<p><strong>課中</strong></p>
+<ol>
+<li>導師抽點同學回答與討論當週主題（靈魂拷問時間）</li>
+<li>導師同時會作當週主題的內容和經驗分享（金句名言時間）</li>
+<li>在導師設計好的 Miro 模板上個人/分組實作與分享（腦力激盪時間）</li>
+</ol>
+<p><strong>課後</strong></p>
+<ol>
+<li>課程心得與反饋</li>
+<li>Discord 群組交流和延伸議題討論</li>
+<li>作業 refine 和 final presentation 準備</li>
+</ol>
+<h2 id="其中最讓我印象深刻的地方">其中最讓我印象深刻的地方</h2>
+<p>國父在第二週課程提到的一個關鍵點：「<strong>工具的決策，缺點比優點還重要</strong>」，過去在決定要選用或導入的技術/工具時，常看到的都是正面的好處和成果（從影片或文章），建議要多看一些缺點和限制，例如：<code>有很高的學習成本</code>、<code>服務穩定度不高</code>、<code>網路資源缺乏</code>等，這些才是後續容不容易維護的重點。</p>
+<p>有時我會以個人的角度，私心想要接觸時下流行的技術、導入新的工具或挑戰沒實作過的系統架構，但身為主管會<code>以團隊/公司的角度</code>檢視這些項目的<code>學習成本</code>、<code>構建成本</code>、<code>維護成本</code>、<code>人才市場</code>、<code>可帶來多大效益</code>、<code>是否有其他替代方案</code>等，分析完成本效益後可能會發現這些並不是團隊當前迫切需要的，就算是其他部門明確提出的需求，也該評估其合理性和必要性，給予專業的優先度建議，因為「<strong>沒有完美的解決方案或做不出來的系統，只是從 day 1 到 day n 都在做取捨而已</strong>」。</p>
+<p>以這次我們小組的 final presentation 為例，題目簡介：「營運部門 PM 想要查看即時的營收表現(Revenue)、用戶流量(Traffic) 的 Dashboard，所以 Data Team 要將本來的 Daily Batch Pipeline 導入並整合 Streaming Pipeline，最終規劃要 3個人力 &amp; 4個人月來完成」。</p>
+<p>然而導師最後的評語強烈提醒我，自己的思考還不夠全面，真的是<code>格局和高度的差距</code>阿！</p>
+<p>下面列出國父和 Bryant 真實的回饋：</p>
+<ul>
+<li>「BigQuery data warehouse 比 production DB replica 還不及時，似乎不是引入 BigQuery 能解決的痛點。」</li>
+<li>「讓 DE/DA centralize 負責大部分的 transformation 已經解決多數問題，dataform 的引入似乎不算是在新組織架構與分工下關鍵要解決的問題。」</li>
+<li>「不確定 dataflow 的必要性，是否有可能 pub/sub 直入 BigQuery 後，再在 BigQuery 做 transformation？這樣可以讓邏輯更集中在 BigQuery 一處，也比較不會跟 dataform 想解決的 metric layer 相衝突，避免又多一處有business logic 以及做 transformation。」</li>
+<li>「Event Streaming 的部分是要先走 dataflow 再進 BQ 還是先進 BQ 在統一用 BQ 做計算在實務上會有很多討論，除了國父提出之外，我也會考慮人員的技能樹以及是否要多管一個 component。」</li>
+<li>「如果外部單位提出來一個 Data 根本覺得不需要做，或是做了不合的需求該怎麼辦？例如這裡一直在討論的即時儀表板。課程和使用者資訊真的需要“即時”的看嗎？還是每一個小時看一次就差不多了呢？」</li>
+<li>「如果要做 event streaming 的話，是不是可以一起把需要即時觀察的資訊透過 event 送出來，就不用再多導入一個 CDC 的系統？」</li>
+</ul>
+<h2 id="給有興趣申請-rise-的朋友一些建議">給有興趣申請 RISE 的朋友一些建議</h2>
+<p>此計畫很適合<strong>學習動機強並樂意在社群中共學</strong>的朋友參加，這門課也期待你是有設計和打造數據相關產品經驗，且有興趣學習管理更大規模的資料專案的技術人才，雖然過程中要投入蠻多時間和精力在準備課程和小組討論上，但收穫絕對會超乎你的想像！</p>
+<p>這邊分享申請概要供大家參考，如果你沒信心自己是否符合資格，下面這些項目都可以預先準備：</p>
+<ul>
+<li>Linkedin 個人履歷頁面</li>
+<li>技術能力 - 程式語言（SQL, Python, etc）</li>
+<li>技術能力 - 數據工程相關工具（Spark, Airflow, etc)</li>
+<li>目前職位的核心任務</li>
+<li>你對於 data pipeline 的理解</li>
+<li>你曾參與的 data project（主要要解決的問題 vs 你負責的任務）</li>
+<li>「設計 end-to-end 數據架構」這個學程能如何在工作上幫助你？</li>
+<li>你是否能每週投入至少 5 小時，且願意積極參與課堂與小組討論？</li>
+<li>你對 RISE 的期望與可能的參與</li>
+<li>你的推薦人</li>
+</ul>
+<p>如果你對計畫內容或申請攻略有任何問題歡迎詢問我哦～</p>
+<h2 id="總結">總結</h2>
+<p>很感謝自己當初報名這次的課程，這些內容都非常值得拿出來重複觀看，隨著工作經驗累積，我想一定會有不一樣的收穫～</p>
+<p>「設計 E2E 現代數據架構」學程只是 RISE 計畫的起點，2023 我要好好利用這個資源豐沛的場域，累積人脈、持續學習、職涯升級🙏</p>
+<br>
+<figure><a class="lightgallery" href="/e2e-data-architecture-bootcamp/final-presentation.png" title="課程完結" data-thumbnail="/e2e-data-architecture-bootcamp/final-presentation.png" data-sub-html="<h2>課程完結</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="final-presentation.png"
+            data-srcset="/e2e-data-architecture-bootcamp/final-presentation.png, final-presentation.png 1.5x, /e2e-data-architecture-bootcamp/final-presentation.png 2x"
+            data-sizes="auto"
+            alt="課程完結" width="100%" />
+    </a><figcaption class="image-caption">課程完結</figcaption>
+    </figure>
+<h2 id="參考">參考</h2>
+<p><a href="https://achq.notion.site/RISE-535cb38c368a438aa268a5528dac54ae" target="_blank" rel="noopener noreffer">RISE - 給未來技術領袖的新學習場域</a></p>
+<p><a href="https://www.notion.so/c15b8a99e68a402cba1d623c7cdae290" target="_blank" rel="noopener noreffer">Early Riser - 設計 E2E 現代數據架構</a></p>
+<p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7021370176159842304/" target="_blank" rel="noopener noreffer">Early Riser 成果發表會回顧 (Linkedin Post)</a></p>
+<p><a href="https://www.facebook.com/alphacamp.tw" target="_blank" rel="noopener noreffer">ALPHA Camp 臉書專頁</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/e2e-data-architecture-bootcamp/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://enzochang.com/e2e-data-architecture-bootcamp/" data-title="[COURSE] RISE - 設計 E2E 數據架構 學程心得" data-hashtags="course,bootcamp,data-architecture"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://enzochang.com/e2e-data-architecture-bootcamp/" data-hashtag="course"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://enzochang.com/e2e-data-architecture-bootcamp/" data-title="[COURSE] RISE - 設計 E2E 數據架構 學程心得"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://enzochang.com/e2e-data-architecture-bootcamp/" data-title="[COURSE] RISE - 設計 E2E 數據架構 學程心得"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/course/">course</a>,&nbsp;<a href="/tags/bootcamp/">bootcamp</a>,&nbsp;<a href="/tags/data-architecture/">data-architecture</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/why-you-should-be-a-conference-speaker/" class="prev" rel="prev" title="[CAREER] 為什麼你應該投稿成為社群/研討會講者？"><i class="fas fa-angle-left fa-fw"></i>[CAREER] 為什麼你應該投稿成為社群/研討會講者？</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/enzochang/" target="_blank">Enzo Chang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://https-enzochang-com.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":40},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-S56LF74G2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-S56LF74G2R" async></script></body>
+</html>

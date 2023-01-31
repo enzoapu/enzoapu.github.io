@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>course - Tag - 恩佐思維</title>
+        <link>https://enzochang.com/tags/course/</link>
+        <description>course - Tag - 恩佐思維</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 30 Jan 2023 19:36:23 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/course/" rel="self" type="application/rss+xml" /><item>
+    <title>[COURSE] RISE - 設計 E2E 數據架構 學程心得</title>
+    <link>https://enzochang.com/e2e-data-architecture-bootcamp/</link>
+    <pubDate>Mon, 30 Jan 2023 19:36:23 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://enzochang.com/e2e-data-architecture-bootcamp/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/ac-rise.png" referrerpolicy="no-referrer">
+            </div>2022年底，我報名了 ALPHA Camp 推出的「設計 E2E 現代數據架構」學程（業界首見👀），六週的內容超出預期的豐富，認識了許多 Data 領域的超強導師和優秀同儕，用力地學習、死命地交流，獲得的知識、經驗、人脈和資源，實在很超值！這篇文章將透過回顧和反思來記錄這些時間的想法與收穫。]]></description>
+</item></channel>
+</rss>
