@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>pika - Tag - 恩佐思維</title>
+        <title>pika - Tag - Enzo 恩佐的數據職涯</title>
         <link>https://enzochang.com/tags/pika/</link>
-        <description>pika - Tag - 恩佐思維</description>
+        <description>pika - Tag - Enzo 恩佐的數據職涯</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
             <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 22 Mar 2022 22:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/pika/" rel="self" type="application/rss+xml" /><item>
     <title>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例</title>

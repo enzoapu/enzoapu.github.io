@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta content="Message Queueu 介紹, Message Queueu 應用, 訊息佇列 介紹, 訊息佇列 應用" name="keywords">
         <meta name="google-site-verification" content="C0V2SROPoRYz0zPWpfXKWVffXgbrLJR-yxL0pmdVip8" />
-        <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用 - 恩佐思維</title><meta name="Description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"><meta property="og:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用" />
+        <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用 - Enzo 恩佐的數據職涯</title><meta name="Description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。"><meta property="og:title" content="[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用" />
 <meta property="og:description" content="這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 &amp; 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://enzochang.com/message-queue-introduction/" /><meta property="og:image" content="https://enzochang.com/images/enzo.png"/><meta property="article:section" content="posts" />
@@ -65,14 +65,14 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="恩佐思維"><img
+            <a href="/" title="Enzo 恩佐的數據職涯"><img
         class="lazyload logo"
         src="/svg/loading.min.svg"
         data-src="/images/avatar/i4.png"
         data-srcset="/images/avatar/i4.png, /images/avatar/i4.png 1.5x, /images/avatar/i4.png 2x"
         data-sizes="auto"
         alt="/images/avatar/i4.png"
-        title="/images/avatar/i4.png" />恩佐思維</a>
+        title="/images/avatar/i4.png" />Enzo 恩佐的數據職涯</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/"> Home </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -96,14 +96,14 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="恩佐思維"><img
+                <a href="/" title="Enzo 恩佐的數據職涯"><img
         class="lazyload logo"
         src="/svg/loading.min.svg"
         data-src="/images/avatar/i4.png"
         data-srcset="/images/avatar/i4.png, /images/avatar/i4.png 1.5x, /images/avatar/i4.png 2x"
         data-sizes="auto"
         alt="/images/avatar/i4.png"
-        title="/images/avatar/i4.png" />恩佐思維</a>
+        title="/images/avatar/i4.png" />Enzo 恩佐的數據職涯</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -274,7 +274,7 @@ Message Queue 常見的開源工具有 RabbitMQ、Redis、Kafka（不同特性�
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-03-29&nbsp;<a class="git-hash" href="eeee/commit/af2b74990be6b0b849dab90688d55a84eac2481a" target="_blank" title="commit by Enzo Chang(enzo.chang@shopee.com) af2b74990be6b0b849dab90688d55a84eac2481a: update all file">
+                <span>Updated on 2022-03-29&nbsp;<a class="git-hash" href="https://github.com/enzoapu/enzoapu.github.io/commit/af2b74990be6b0b849dab90688d55a84eac2481a" target="_blank" title="commit by Enzo Chang(enzo.chang@shopee.com) af2b74990be6b0b849dab90688d55a84eac2481a: update all file">
                                     <i class="fas fa-hashtag fa-fw"></i>af2b749</a></span>
             </div>
             <div class="post-info-license"></div>
@@ -304,7 +304,7 @@ Message Queue 常見的開源工具有 RabbitMQ、Redis、Kafka（不同特性�
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/enzochang/" target="_blank">Enzo Chang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/enzochang/" target="_blank">Enzo Chang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

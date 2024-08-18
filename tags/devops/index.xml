@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>devops - Tag - 恩佐思維</title>
+        <title>devops - Tag - Enzo 恩佐的數據職涯</title>
         <link>https://enzochang.com/tags/devops/</link>
-        <description>devops - Tag - 恩佐思維</description>
+        <description>devops - Tag - Enzo 恩佐的數據職涯</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
             <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 13 Feb 2022 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/devops/" rel="self" type="application/rss+xml" /><item>
     <title>[DevOps] CI/CD 介紹 - 基礎概念與導入準備</title>
