@@ -3,7 +3,18 @@
 
 ### Hello
 
-我是 Enzo，一位非典型工程師，跨足資料科學 x 軟體開發 x 資訊教育，熱愛學習與參加社群，目前在某電商平台擔任 Data Engineer (90%)，身兼 Scrum Master (10%)。曾經在接案公司擔任軟體工程師和專案經理，經歷各種隕石需求和合約戰爭荼毒，遇見敏捷(Agile/Scrum)後，深受其價值觀所吸引，致力成為身心合一的敏捷實踐家！
+我是 Enzo，一位非典型工程師，跨足資料科學 x 軟體開發 x 資訊教育，熱愛學習與參加社群，目前在直播串流公司擔任 Sr. Data Engineer，之前還待過大型電商平台擔任 Data Engineer (90%)，身兼 Scrum Master (10%)。
+
+2023 開始經營 Instagram（[Enzo 恩佐的數據職涯](https://www.instagram.com/enzo.data.career/) @enzo.data.career），致力於整理 `數據工程` 和 `資料科學` 的知識乾貨，同時會分享 `職涯發展` 和 `成長思維` 的相關資源。
+
+#### 近期經歷
+
+- 2024 TWDS 資料科學社群導師計畫(資料工程組) - Mentor
+- 2024 數據分析求職工作坊(兩天，共 5.5小時)- 合作講師
+- 2024 XChange 互聯網大學 Engineering 組 - 講師
+- 2024 勞動部-高屏澎東分署 青年職涯發展中心 - 講師
+- 2023 Taiwan Data Science Meetup - 講者
+2023 資料科學家的工作日常 - 講者
 
 ### 架站動機
 
@@ -11,15 +22,12 @@
 
 ### 文章方向
 
-這個部落格的文章主題會以「 資料工程 Data Engineering 」、「 敏捷 Agile/Scrum 」、「 職涯探索 Career」為主，內容類型可能為學習筆記、實作教學、經驗分享、個人觀點等。
+這個部落格的文章主題會以「 資料工程 Data Engineering 」、「 學習成長 Learning & Growth 」、「 職涯探索 Career Development」為主，內容類型可能為學習筆記、實作教學、經驗分享、個人觀點等。
 
-### 行動期許
-
-期許自己能夠堅持寫文，幫助自己也能幫助到別人，也歡迎你與我連結、互相交流。
 
 ### 聯繫方式
 
-* Facebook：[https://www.facebook.com/enzoapu](https://www.facebook.com/enzoapu)
+* Instagram：[https://www.instagram.com/enzo.data.career/](https://www.instagram.com/enzo.data.career/)
 * Linkedin：[https://www.linkedin.com/in/enzochang](https://www.linkedin.com/in/enzochang)
 * E-mail：[enzoapu@gmail.com](enzoapu@gmail.com)
 
