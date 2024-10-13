@@ -133,6 +133,38 @@
         alt="/images/profile.jpeg"
         title="/images/profile.jpeg" /></a></div><h1 class="home-title">Enzo Chang</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://linkedin.com/in/enzochang" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://facebook.com/enzoapu" title="facebook" target="_blank" rel="noopener noreffer me"><i class="fab fa-facebook fa-fw"></i></a><a href="mailto:ennzoapu@gmail.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/data-engineering-introduction/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="cover-picture-preview.png"
+        data-srcset="/data-engineering-introduction/cover-picture-preview.png, cover-picture-preview.png 1.5x, /data-engineering-introduction/cover-picture-preview.png 2x"
+        data-sizes="auto"
+        alt="/data-engineering-introduction/cover-picture-preview.png"
+        title="資料工程(Data Engineering)是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/data-engineering-introduction/">[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-10-13">2024-10-13</time></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div><div class="content">前言 在生成式 AI 應用普及化的世代，越來越多人想要踏入 「資料科學」 和 「人工智慧」 領域，其中最吸引人的職位應該是與 AI 工程師或機器學習相關的工作。想像一下，從數據中發掘商業洞見(business insight)，或訓練出一個模型來預測(forecasting)未來——這是一件令人興奮且充滿影響力的事情！😍
+但是你有沒有想過，這些數據分析師或資料科學家使用的數據是從哪裡來的？通常這些數據在背後經過了各式的處理和轉換，才能變得乾淨、正確且容易取得，這正是資料工程師(Data Engineer) 的重要工作。
+什麼是資料工程？ 資料工程(Data Engineering) 是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。自 2010 年大數據和雲端運算興起以來，資料工程得到了顯著的發展。分佈式數據處理框架的出現，使得處理大數據變得更容易和高效；同時，雲端平台提供了可擴展和彈性的資源，加速了資料工程的創新和應用。
+為什麼資料工程如此重要？ 資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。
+為什麼資料工程重要？ 資料工程重要的關鍵原因:
+1. 數據量爆炸性增長 在這個數據為王的時代，不論是新興互聯網產業，還是正在推動數位轉型的金融、媒體、製造、醫療等產業，都需要把用戶行為/足跡或生產流程的各種數據保存起來。隨著結構化與非結構化數據量的爆炸性增長，企業需要能夠處理和管理大量數據的技術和專業知識。
+2. 數據驅動決策的需求 企業越來越相信數據的價值，希望利用數據來做出更明智的決策。資料工程能夠提供可靠的數據基礎設施和管道，確保數據的正確性和可用性，使企業能夠更有效地分析和利用數據。
+3. 支持人工智慧應用發展 機器學習/深度學習需要大量的高質量數據來訓練和驗證模型，並需要分佈式計算框架來實現複雜且大規模的資料處理，最終還得協助模型部署和集成，使模型能夠實際應用於業務場景中。
+資料工程的職責範疇 在規模較小的組織中，資料工程的職責通常由其他角色來承擔，例如後端工程師或數據分析師。然而，到了一定規模的組織，就會開始招募資料工程師或成立資料工程團隊，他們的職責範圍大致如下：
+資料工程的範疇 1. 數據架構設計 設計適合組織需求的數據架構，包括 ETL/ETL 架構、批量/串流資料管線，資料倉儲結構和存儲方式，具備高可用性與可擴展性。
+2. 基礎設施構建與維護 透過雲端服務或開源工具搭建基礎設施，包括資料管線、任務排程器、數據湖、數據倉儲等，提供可靠的數據管理和訪問環境。
+3. 數據整合與轉換 整合不同數據源的數據，進行清理、轉換和聚合等操作，使數據具有相同的格式和結構，以支持準確和一致的數據分析。
+4. 數據管理與治理 制定數據管理策略和流程，確保數據集中且合規、定義明確、品質穩定、符合隱私規範，包括自動化測試、數據監控、數據目錄、數據驗證、資料安全等。
+5. 數據服務化 將數據提供為服務，使其他業務單位可以方便地訪問和使用數據，例如資料儀表板(Dashboard)、資料查詢平台(Query platform)、Data API、機器學習模型、推薦系統等，支持數據驅動的決策與更多應用開發。
+總結 資料工程在確保數據的易用性、可靠性和分析準備方面扮演著關鍵角色。在這個數據為王的時代，資料工程師是穩固數據基礎的建築師。不論你是希望支持商業決策、促進機器學習模型、建構 AI 應用，還是進行即時資料分析，資料工程都提供了現代數據驅動企業所需的工具和流程。
+想了解更多資料工程相關的知識？想知道如何開始你的資料工程師職涯嗎？
+歡迎關注我的 IG 帳號 👉 「Enzo 恩佐的數據職涯」 觀看並取得更多的乾貨和指南，幫助你在學習成長和職涯發展的路上找到方向！
+&hellip;
+下一篇文章將介紹 「資料工程師」 這個角色的主要工作內容與使命，敬請期待😁</div><div class="post-footer">
+        <a href="/data-engineering-introduction/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/data/">data</a>,&nbsp;<a href="/tags/data-engineer/">data-engineer</a>,&nbsp;<a href="/tags/data-engineering/">data-engineering</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/e2e-data-architecture-bootcamp/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -175,11 +207,6 @@
     </h1><div class="post-meta"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-03-06">2022-03-06</time></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div><div class="content">上一篇文章介紹完 Message Queue 是什麼後，這次要介紹的是知名且易用的實作工具 RabbitMQ，本篇文章將帶大家認識 RabbitMQ 的架構以及 5 種設計模式。</div><div class="post-footer">
         <a href="/rabbitmq-introduction/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/rabbitmq/">rabbitmq</a>,&nbsp;<a href="/tags/message-queue/">message-queue</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/message-queue-introduction/">[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-03-03">2022-03-03</time></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div><div class="content">這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。</div><div class="post-footer">
-        <a href="/message-queue-introduction/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/message-queue/">message-queue</a>,&nbsp;<a href="/tags/system-design/">system-design</a>,&nbsp;<a href="/tags/architecture/">architecture</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>

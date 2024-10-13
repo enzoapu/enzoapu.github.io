@@ -2,22 +2,26 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://enzochang.com/e2e-data-architecture-bootcamp/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/tags/bootcamp/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/categories/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/tags/course/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/categories/course/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/tags/data-architecture/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/posts/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/tags/</loc><lastmod>2023-01-30T19:36:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/why-you-should-be-a-conference-speaker/</loc><lastmod>2022-04-10T19:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/categories/career/</loc><lastmod>2022-04-10T19:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/tags/community/</loc><lastmod>2022-04-10T19:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/tags/conference/</loc><lastmod>2022-04-10T19:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/tags/speaker/</loc><lastmod>2022-04-10T19:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/data-engineering-introduction/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/categories/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/tags/data/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/categories/data-engineering/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/tags/data-engineer/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/tags/data-engineering/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/posts/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/tags/</loc><lastmod>2024-10-13T15:48:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://enzochang.com/e2e-data-architecture-bootcamp/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/tags/bootcamp/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/tags/course/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/categories/course/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/tags/data-architecture/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/why-you-should-be-a-conference-speaker/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/categories/career/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/tags/community/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/tags/conference/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://enzochang.com/tags/speaker/</loc><lastmod>2024-08-20T00:35:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://enzochang.com/rabbitmq-python-example/</loc><lastmod>2022-03-29T15:01:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://enzochang.com/categories/data-engineering/</loc><lastmod>2022-03-29T15:01:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://enzochang.com/tags/pika/</loc><lastmod>2022-03-29T15:01:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://enzochang.com/tags/python/</loc><lastmod>2022-03-29T15:01:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://enzochang.com/tags/rabbitmq/</loc><lastmod>2022-03-29T15:01:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

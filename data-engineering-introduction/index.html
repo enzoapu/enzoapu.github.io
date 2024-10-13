@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta content="資料工程, 資料工程師, 數據工程師, Data Engineer, Data Engineering" name="keywords">
+        <meta name="google-site-verification" content="C0V2SROPoRYz0zPWpfXKWVffXgbrLJR-yxL0pmdVip8" />
+        <title>[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？ - Enzo 恩佐的數據職涯</title><meta name="Description" content="資料工程(Data Engineering)是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。"><meta property="og:title" content="[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？" />
+<meta property="og:description" content="資料工程(Data Engineering)是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://enzochang.com/data-engineering-introduction/" /><meta property="og:image" content="https://enzochang.com/data-engineering-introduction/cover-picture-preview.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-10-13T15:48:09+08:00" />
+<meta property="article:modified_time" content="2024-10-13T15:48:09+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://enzochang.com/data-engineering-introduction/cover-picture-preview.png"/>
+<meta name="twitter:title" content="[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？"/>
+<meta name="twitter:description" content="資料工程(Data Engineering)是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。"/>
+<meta name="application-name" content="Enzo Thinking">
+<meta name="apple-mobile-web-app-title" content="Enzo Thinking"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://enzochang.com/data-engineering-introduction/" /><link rel="prev" href="https://enzochang.com/e2e-data-architecture-bootcamp/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/enzochang.com\/data-engineering-introduction\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/enzochang.com\/images\/profile.jpeg",
+                            "width":  1400 ,
+                            "height":  1400 
+                        }],"genre": "posts","keywords": "data, data-engineer, data-engineering","wordcount":  71 ,
+        "url": "https:\/\/enzochang.com\/data-engineering-introduction\/","datePublished": "2024-10-13T15:48:09+08:00","dateModified": "2024-10-13T15:48:09+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/enzochang.com\/images\/avatar\/i4.png",
+                    "width":  421 ,
+                    "height":  421 
+                }},"author": {
+                "@type": "Person",
+                "name": "Enzo Chang"
+            },"description": "資料工程(Data Engineering)是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。"
+    }
+    </script>
+            
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S56LF74G2R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S56LF74G2R');
+</script>
+        
+    </head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Enzo 恩佐的數據職涯"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar/i4.png"
+        data-srcset="/images/avatar/i4.png, /images/avatar/i4.png 1.5x, /images/avatar/i4.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar/i4.png"
+        title="/images/avatar/i4.png" />Enzo 恩佐的數據職涯</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> Home </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Enzo 恩佐的數據職涯"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar/i4.png"
+        data-srcset="/images/avatar/i4.png, /images/avatar/i4.png 1.5x, /images/avatar/i4.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar/i4.png"
+        title="/images/avatar/i4.png" />Enzo 恩佐的數據職涯</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/" title="">Home</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/enzochang/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Enzo Chang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-engineering/"><i class="far fa-folder fa-fw"></i>Data Engineering</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-10-13">2024-10-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;71 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="cover-picture-title.png"
+        data-srcset="/data-engineering-introduction/cover-picture-title.png, cover-picture-title.png 1.5x, /data-engineering-introduction/cover-picture-title.png 2x"
+        data-sizes="auto"
+        alt="/data-engineering-introduction/cover-picture-title.png"
+        title="資料工程(Data Engineering)是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#為什麼資料工程如此重要">為什麼資料工程如此重要？</a>
+      <ul>
+        <li><a href="#1-數據量爆炸性增長">1. 數據量爆炸性增長</a></li>
+        <li><a href="#2-數據驅動決策的需求">2. 數據驅動決策的需求</a></li>
+        <li><a href="#3-支持人工智慧應用發展">3. 支持人工智慧應用發展</a></li>
+      </ul>
+    </li>
+    <li><a href="#資料工程的職責範疇">資料工程的職責範疇</a>
+      <ul>
+        <li><a href="#1-數據架構設計">1. 數據架構設計</a></li>
+        <li><a href="#2-基礎設施構建與維護">2. 基礎設施構建與維護</a></li>
+        <li><a href="#3-數據整合與轉換">3. 數據整合與轉換</a></li>
+        <li><a href="#4-數據管理與治理">4. 數據管理與治理</a></li>
+        <li><a href="#5-數據服務化">5. 數據服務化</a></li>
+      </ul>
+    </li>
+    <li><a href="#總結">總結</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>在生成式 AI 應用普及化的世代，越來越多人想要踏入 <strong>「資料科學」</strong> 和 <strong>「人工智慧」</strong> 領域，其中最吸引人的職位應該是與 AI 工程師或機器學習相關的工作。想像一下，從數據中發掘商業洞見(business insight)，或訓練出一個模型來預測(forecasting)未來——這是一件令人興奮且充滿影響力的事情！😍</p>
+<p>但是你有沒有想過，這些數據分析師或資料科學家使用的數據是從哪裡來的？通常這些數據在背後經過了各式的處理和轉換，才能變得乾淨、正確且容易取得，這正是<strong>資料工程師(Data Engineer)</strong> 的重要工作。</p>
+<br>
+<figure><a class="lightgallery" href="/data-engineering-introduction/what-is-data-engineering.png" title="什麼是資料工程？" data-thumbnail="/data-engineering-introduction/what-is-data-engineering.png" data-sub-html="<h2>什麼是資料工程？</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="what-is-data-engineering.png"
+            data-srcset="/data-engineering-introduction/what-is-data-engineering.png, what-is-data-engineering.png 1.5x, /data-engineering-introduction/what-is-data-engineering.png 2x"
+            data-sizes="auto"
+            alt="什麼是資料工程？" width="75%" />
+    </a><figcaption class="image-caption">什麼是資料工程？</figcaption>
+    </figure>
+<p><strong>資料工程(Data Engineering)</strong> 是一個涉及處理和管理大量數據的領域，包括數據的收集、轉換和儲存，將其轉化為有價值的資訊。自 2010 年大數據和雲端運算興起以來，資料工程得到了顯著的發展。分佈式數據處理框架的出現，使得處理大數據變得更容易和高效；同時，雲端平台提供了可擴展和彈性的資源，加速了資料工程的創新和應用。</p>
+<h2 id="為什麼資料工程如此重要">為什麼資料工程如此重要？</h2>
+<p>資料工程在企業界變得越來越熱門，是因為它能夠解決企業在數據處理和管理方面的挑戰，幫助企業更好地利用數據來推動業務增長和服務創新。</p>
+<br>
+<figure><a class="lightgallery" href="/data-engineering-introduction/why-data-engineering-important.png" title="為什麼資料工程重要？" data-thumbnail="/data-engineering-introduction/why-data-engineering-important.png" data-sub-html="<h2>為什麼資料工程重要？</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="why-data-engineering-important.png"
+            data-srcset="/data-engineering-introduction/why-data-engineering-important.png, why-data-engineering-important.png 1.5x, /data-engineering-introduction/why-data-engineering-important.png 2x"
+            data-sizes="auto"
+            alt="為什麼資料工程重要？" width="75%" />
+    </a><figcaption class="image-caption">為什麼資料工程重要？</figcaption>
+    </figure>
+<p><strong>資料工程重要的關鍵原因:</strong></p>
+<h3 id="1-數據量爆炸性增長">1. 數據量爆炸性增長</h3>
+<p>在這個數據為王的時代，不論是新興互聯網產業，還是正在推動數位轉型的金融、媒體、製造、醫療等產業，都需要把用戶行為/足跡或生產流程的各種數據保存起來。隨著結構化與非結構化數據量的爆炸性增長，企業需要能夠處理和管理大量數據的技術和專業知識。</p>
+<h3 id="2-數據驅動決策的需求">2. 數據驅動決策的需求</h3>
+<p>企業越來越相信數據的價值，希望利用數據來做出更明智的決策。資料工程能夠提供可靠的數據基礎設施和管道，確保數據的正確性和可用性，使企業能夠更有效地分析和利用數據。</p>
+<h3 id="3-支持人工智慧應用發展">3. 支持人工智慧應用發展</h3>
+<p>機器學習/深度學習需要大量的高質量數據來訓練和驗證模型，並需要分佈式計算框架來實現複雜且大規模的資料處理，最終還得協助模型部署和集成，使模型能夠實際應用於業務場景中。</p>
+<h2 id="資料工程的職責範疇">資料工程的職責範疇</h2>
+<p>在規模較小的組織中，資料工程的職責通常由其他角色來承擔，例如後端工程師或數據分析師。然而，到了一定規模的組織，就會開始招募資料工程師或成立資料工程團隊，他們的職責範圍大致如下：</p>
+<br>
+<figure><a class="lightgallery" href="/data-engineering-introduction/data-engineering-scope.png" title="資料工程的範疇" data-thumbnail="/data-engineering-introduction/data-engineering-scope.png" data-sub-html="<h2>資料工程的範疇</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="data-engineering-scope.png"
+            data-srcset="/data-engineering-introduction/data-engineering-scope.png, data-engineering-scope.png 1.5x, /data-engineering-introduction/data-engineering-scope.png 2x"
+            data-sizes="auto"
+            alt="資料工程的範疇" width="75%" />
+    </a><figcaption class="image-caption">資料工程的範疇</figcaption>
+    </figure>
+<h3 id="1-數據架構設計">1. 數據架構設計</h3>
+<p>設計適合組織需求的數據架構，包括 ETL/ETL 架構、批量/串流資料管線，資料倉儲結構和存儲方式，具備高可用性與可擴展性。</p>
+<h3 id="2-基礎設施構建與維護">2. 基礎設施構建與維護</h3>
+<p>透過雲端服務或開源工具搭建基礎設施，包括資料管線、任務排程器、數據湖、數據倉儲等，提供可靠的數據管理和訪問環境。</p>
+<h3 id="3-數據整合與轉換">3. 數據整合與轉換</h3>
+<p>整合不同數據源的數據，進行清理、轉換和聚合等操作，使數據具有相同的格式和結構，以支持準確和一致的數據分析。</p>
+<h3 id="4-數據管理與治理">4. 數據管理與治理</h3>
+<p>制定數據管理策略和流程，確保數據集中且合規、定義明確、品質穩定、符合隱私規範，包括自動化測試、數據監控、數據目錄、數據驗證、資料安全等。</p>
+<h3 id="5-數據服務化">5. 數據服務化</h3>
+<p>將數據提供為服務，使其他業務單位可以方便地訪問和使用數據，例如資料儀表板(Dashboard)、資料查詢平台(Query platform)、Data API、機器學習模型、推薦系統等，支持數據驅動的決策與更多應用開發。</p>
+<h2 id="總結">總結</h2>
+<p>資料工程在確保數據的易用性、可靠性和分析準備方面扮演著關鍵角色。在這個數據為王的時代，<strong>資料工程師</strong>是穩固數據基礎的建築師。不論你是希望支持商業決策、促進機器學習模型、建構 AI 應用，還是進行即時資料分析，資料工程都提供了現代數據驅動企業所需的工具和流程。</p>
+<br>
+<p>想了解更多資料工程相關的知識？想知道如何開始你的資料工程師職涯嗎？</p>
+<p>歡迎關注我的 IG 帳號 👉 <a href="https://www.instagram.com/enzo.data.career/" target="_blank" rel="noopener noreffer">「Enzo 恩佐的數據職涯」</a> 觀看並取得更多的乾貨和指南，幫助你在學習成長和職涯發展的路上找到方向！</p>
+<p>&hellip;</p>
+<p>下一篇文章將介紹 <strong>「資料工程師」</strong> 這個角色的主要工作內容與使命，敬請期待😁</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-10-13</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/data-engineering-introduction/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://enzochang.com/data-engineering-introduction/" data-title="[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？" data-hashtags="data,data-engineer,data-engineering"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://enzochang.com/data-engineering-introduction/" data-hashtag="data"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://enzochang.com/data-engineering-introduction/" data-title="[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://enzochang.com/data-engineering-introduction/" data-title="[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/data/">data</a>,&nbsp;<a href="/tags/data-engineer/">data-engineer</a>,&nbsp;<a href="/tags/data-engineering/">data-engineering</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/e2e-data-architecture-bootcamp/" class="prev" rel="prev" title="[COURSE] RISE - 設計 E2E 數據架構 學程心得"><i class="fas fa-angle-left fa-fw"></i>[COURSE] RISE - 設計 E2E 數據架構 學程心得</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/enzochang/" target="_blank">Enzo Chang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://https-enzochang-com.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":40},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-S56LF74G2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-S56LF74G2R" async></script></body>
+</html>

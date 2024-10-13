@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Data Engineering - Category - Enzo 恩佐的數據職涯</title>
-        <link>https://enzochang.com/categories/data-engineering/</link>
-        <description>Data Engineering - Category - Enzo 恩佐的數據職涯</description>
+        <title>data - Tag - Enzo 恩佐的數據職涯</title>
+        <link>https://enzochang.com/tags/data/</link>
+        <description>data - Tag - Enzo 恩佐的數據職涯</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>enzoapu@gmail.com (Enzo Chang)</managingEditor>
-            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 13 Oct 2024 15:48:09 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/categories/data-engineering/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>enzoapu@gmail.com (Enzo Chang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 13 Oct 2024 15:48:09 &#43;0800</lastBuildDate><atom:link href="https://enzochang.com/tags/data/" rel="self" type="application/rss+xml" /><item>
     <title>[Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？</title>
     <link>https://enzochang.com/data-engineering-introduction/</link>
     <pubDate>Sun, 13 Oct 2024 15:48:09 &#43;0800</pubDate>
@@ -31,33 +31,5 @@
 歡迎關注我的 IG 帳號 👉 「Enzo 恩佐的數據職涯」 觀看並取得更多的乾貨和指南，幫助你在學習成長和職涯發展的路上找到方向！
 &hellip;
 下一篇文章將介紹 「資料工程師」 這個角色的主要工作內容與使命，敬請期待😁]]></description>
-</item><item>
-    <title>[DATA] 訊息佇列 04 - RabbitMQ x Python 程式實作範例</title>
-    <link>https://enzochang.com/rabbitmq-python-example/</link>
-    <pubDate>Tue, 22 Mar 2022 22:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://enzochang.com/rabbitmq-python-example/</guid>
-    <description><![CDATA[上一篇文章我們已經把 RabbitMQ Server 的環境架設起來，並在網頁管理介面上體驗建立 Queue 和 Publish / Get 訊息，系列文的最後一篇終於要來寫 code 了，我們將使用 Python 的 Library - Pika 與 RabbitMQ 進行互動，撰寫 Client 端的 Producer 和 Consumer 程式碼。]]></description>
-</item><item>
-    <title>[DATA] 訊息佇列 03 - RabbitMQ 架設方法與網頁管理介面</title>
-    <link>https://enzochang.com/rabbitmq-management-interface/</link>
-    <pubDate>Tue, 15 Mar 2022 22:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://enzochang.com/rabbitmq-management-interface/</guid>
-    <description><![CDATA[上一篇介紹完 RabbitMQ 的架構和設計模式，接下來就要告訴大家如何自己搭建 RabbitMQ Server，不用幾行指令就可以在本機或是虛擬主機把服務架起來，還提供了一個 Web 管理介面方便你瀏覽和操作。]]></description>
-</item><item>
-    <title>[DATA] 訊息佇列 02 - RabbitMQ 簡介與 5 種設計模式</title>
-    <link>https://enzochang.com/rabbitmq-introduction/</link>
-    <pubDate>Sun, 06 Mar 2022 21:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://enzochang.com/rabbitmq-introduction/</guid>
-    <description><![CDATA[上一篇文章介紹完 Message Queue 是什麼後，這次要介紹的是知名且易用的實作工具 RabbitMQ，本篇文章將帶大家認識 RabbitMQ 的架構以及 5 種設計模式。]]></description>
-</item><item>
-    <title>[DATA] 訊息佇列 01 - Message Queue 介紹與實際應用</title>
-    <link>https://enzochang.com/message-queue-introduction/</link>
-    <pubDate>Thu, 03 Mar 2022 20:00:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://enzochang.com/message-queue-introduction/</guid>
-    <description><![CDATA[這陣子團隊在開發相似商品搜尋的 ML Product，為了要把系統架構解耦，改為異步分散式處理，因而接觸到訊息佇列(Message Queue)，作為兩個子系統（商品資料爬蟲 & 圖片/文字向量轉換）的通信中間層。我將透過四篇文章分享我在使用 RabbitMQ 與 Python 實作的學習。]]></description>
 </item></channel>
 </rss>
