@@ -1,4 +1,4 @@
-# [Data] 什麼是資料工程(Data Engineering)？為什麼資料工程如此重要？
+# [Data Engineering] 什麼是資料工程？為什麼資料工程重要？
 
 
 ## 前言
@@ -54,10 +54,22 @@
 
 <br>
 
+{{< admonition type=tip title="學習資源" open=true >}} 
 想了解更多資料工程相關的知識？想知道如何開始你的資料工程師職涯嗎？
 
-歡迎關注我的 IG 帳號 👉 [「Enzo 恩佐的數據職涯」](https://www.instagram.com/enzo.data.career/) 觀看並取得更多的乾貨和指南，幫助你在學習成長和職涯發展的路上找到方向！
+歡迎關注我的 IG 帳號 👉 [「Enzo 恩佐的數據職涯」](https://www.instagram.com/enzo.data.career/) 觀看並取得更多的乾貨和指南
 
+幫助你在學習成長和職涯發展的路上找到方向！
+{{</admonition>}} 
 ...
 
 下一篇文章將介紹 **「資料工程師」** 這個角色的主要工作內容與使命，敬請期待😁
+
+
+
+## 閱讀更多文章
+- [Data Engineering 101: Introduction to Data Engineering](https://medium.com/@jacintasally/data-engineering-101-introduction-to-data-engineering-890130acc5a0)
+- [與資料工程相關的組織架構及工作內容簡介](https://medium.com/twdsmeetup/336b754f7af5)
+- [資料分析 vs. 資料工程：從三個面向解析兩種工作的差異](https://tw.alphacamp.co/blog/data-analysis-vs-data-engineering-the-differences-from-three-perspectives)
+- [資料科學家為何需要了解資料工程](https://leemeng.tw/why-you-need-to-learn-data-engineering-as-a-data-scientist.html)
+
